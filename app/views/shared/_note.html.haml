@@ -1,0 +1,7 @@
+#nota_show
+  %div
+    = "#{@nota.category.nil? ? "Uncategorized" : @nota.category.name}:: #{@nota.topic.nil? ? "Off Topic" : @nota.topic.name}"
+  %h3
+    == Title: #{@nota.title}
+  %p
+    = @nota.body

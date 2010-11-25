@@ -1,0 +1,56 @@
+class NotasController < ApplicationController
+  can_edit_on_the_spot
+  before_filter :set_controller
+  def index
+    @notas = Nota.pagination(params[:page])
+  end
+  
+  def show
+    @nota = Nota.find(params[:id])
+    render :partial => 'shared/note'
+  end
+  
+  def new
+    @nota = Nota.new
+  end
+  
+  def create
+    @nota = Nota.new(params[:nota])
+    if @nota.save
+      flash[:notice] = "Successfully created nota."
+      @notas = Nota.pagination(params[:page])
+    end
+  end
+  
+  def edit
+    @nota = Nota.find(params[:id])
+  end
+  
+  def update
+    @nota = Nota.find(params[:id])
+    if @nota.update_attributes(params[:nota])
+      flash[:notice] = "Successfully updated nota."
+      redirect_to @nota
+    else
+      render :action => 'edit'
+    end
+  end
+  
+  def destroy
+    @nota = Nota.find(params[:id])
+    @nota.destroy
+    flash[:notice] = "Successfully destroyed nota."
+    redirect_to notas_url
+  end
+  def set_controller
+    @notas_controller = true
+  end
+
+  def search
+    unless params[:query]
+      search = params[:query][:search]
+      @notas = Nota.where(:body => search )
+    end
+  end
+  
+end
