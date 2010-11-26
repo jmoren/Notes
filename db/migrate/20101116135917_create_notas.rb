@@ -5,6 +5,7 @@ class CreateNotas < ActiveRecord::Migration
       t.text    :body
       t.integer  :topic_id 
       t.integer :category_id
+      t.integer :vote, :default => 0
       t.timestamps
     end
   end

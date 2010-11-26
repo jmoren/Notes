@@ -1,0 +1,6 @@
+%table
+  %tr
+    %td
+      = @nota.vote
+    %td
+      = link_to image_tag('vote.jpg'), add_vote_nota_path(@nota), :remote => true, :method => "post"

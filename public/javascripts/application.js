@@ -35,11 +35,20 @@ $(document).ready(function(){
       $( "#dialog:ui-dialog" ).dialog( "close" );
       $( "#dialog-form" ).dialog({
         autoOpen: false,
-        height: 460,
-        width: 450
+        height: 520,
+        width: 650,
+  			modal: true,
+        close: function() {
+          $('form input[type*=text], form select').val(" ");
+          $('#nota_body_ifr').contents().filter(function() {
+            this.body.children[0].childNodes[0].nodeValue = "";
+        });
+			}
       });
     });
     countWord();
+    
+   
 });
 
 function countWord(){

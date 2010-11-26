@@ -74,16 +74,16 @@
     color: #333333; }
 
 .ui-widget-header {
-  border: 1px solid #8df288;
-  background: #8df288;
+  border: 1px solid #222222;
+  background: #222222;
   color: white;
   font-weight: bold; }
   .ui-widget-header a {
     color: white; }
 
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-  border: 1px solid #8df288;
-  background: #8df288;
+  border: 1px solid #222222;
+  background: #222222;
   font-weight: bold;
   color: #1c94c4; }
 
@@ -95,8 +95,8 @@
     text-decoration: none; }
 
 .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
-  border: 1px solid #8df288;
-  background: #8df288;
+  border: 1px solid #222222;
+  background: #222222;
   font-weight: bold;
   color: #c77405; }
 

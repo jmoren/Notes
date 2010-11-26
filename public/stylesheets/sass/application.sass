@@ -30,12 +30,16 @@ body
 #flash_notice,
 #flash_error
   border-radius: 6px
+  -moz-border-radius: 6px
+  -webkit-border-radius: 6px
   font-weight: bold
   :text-align center
 
   
 .flash
   border-radius: 6px
+  -webkit-border-radius: 6px
+  -moz-border-radius: 6px
   font-weight: bold
   :text-align center
   
@@ -65,16 +69,20 @@ body
   ul
     margin: 0
 #nota_form
-  input,textarea
+  border: solid 5px #cecece
+  padding: 10px
+  border-radius: 5px
+  input[type=text],textarea
     border: 1px solid #cecece
     border-radius: 5px
-  label
-    float: left
-    width: 70px
-#nota_form
-  background: #fff
-  padding: 15px
-  border-radius: 8px
+    -moz-border-radius: 5px
+    -webkit-border-radius: 5px
+    width: 100%
+  th
+    text-align: left
+    padding: 10px
+  td
+    padding: 0 5px
 #sortable
   li 
     margin: 20px 15px
@@ -88,6 +96,8 @@ body
   :background #DBD7D7
   width: 220px
   border-radius: 10px
+  -moz-border-radius: 10px
+  -webkit-border-radius: 10px
   .content
     height: 180px
   .link
@@ -99,6 +109,8 @@ body
   :background #DBD7D7
   padding: 15px
   border-radius: 10px
+  -moz-border-radius: 10px
+  -webkit-border-radius: 10px
   min-height: 300px
   min-width: 350px
 
@@ -137,7 +149,6 @@ body
     &:link,
     &:visited
       color: #fff
-      //border: 1px solid #fff
       text-decoration: none
       color: #fff
       -moz-border-radius: 3px
@@ -145,7 +156,6 @@ body
     &:hover,
     &:active
       color: #fff
-      //border: 1px solid #fff
       background: #ccc
       color: #222
       text-decoration: none
@@ -153,7 +163,6 @@ body
       -webkit-border-radius: 3px
   span
     .current
-      //border: 1px solid #4d88cf
       font-weight: bold
       background: #ccc
       color: #fff
@@ -161,7 +170,6 @@ body
       -webkit-border-radius: 3px
   span
     .disabled
-      //border: 1px solid #fff
       color: #fff
       background: #ccc
       -moz-border-radius: 3px
@@ -178,9 +186,23 @@ body
   :margin-left 80px
 #search_form
   float: right
-  input,textarea
+  clear: both
+  input,select
     border: 1px solid #cecece
     border-radius: 5px
+    -webkit-border-radius: 5px
+    -moz-border-radius: 5px
+  th
+    padding-left: 8px
+    color: #fff
+    font-size: 12px
+    text-align: left
+#search_result
+  :padding 20px
+  font-size: 35px
+  :font-weight bold
+  color: #fff
+  text-align: center
 #footer
   padding: 10px
   text-align: center

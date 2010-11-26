@@ -27,11 +27,15 @@ body {
 #flash_notice,
 #flash_error {
   border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
   font-weight: bold;
   text-align: center; }
 
 .flash {
   border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
   font-weight: bold;
   text-align: center; }
 
@@ -59,17 +63,21 @@ body {
   .error_messages ul {
     margin: 0; }
 
-#nota_form input, #nota_form textarea {
-  border: 1px solid #cecece;
-  border-radius: 5px; }
-#nota_form label {
-  float: left;
-  width: 70px; }
-
 #nota_form {
-  background: white;
-  padding: 15px;
-  border-radius: 8px; }
+  border: solid 5px #cecece;
+  padding: 10px;
+  border-radius: 5px; }
+  #nota_form input[type=text], #nota_form textarea {
+    border: 1px solid #cecece;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    width: 100%; }
+  #nota_form th {
+    text-align: left;
+    padding: 10px; }
+  #nota_form td {
+    padding: 0 5px; }
 
 #sortable li {
   margin: 20px 15px;
@@ -83,7 +91,9 @@ body {
 .nota {
   background: #dbd7d7;
   width: 220px;
-  border-radius: 10px; }
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px; }
   .nota .content {
     height: 180px; }
   .nota .link {
@@ -96,6 +106,8 @@ body {
   background: #dbd7d7;
   padding: 15px;
   border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
   min-height: 300px;
   min-width: 350px; }
 
@@ -171,10 +183,25 @@ body {
   margin-left: 80px; }
 
 #search_form {
-  float: right; }
-  #search_form input, #search_form textarea {
+  float: right;
+  clear: both; }
+  #search_form input, #search_form select {
     border: 1px solid #cecece;
-    border-radius: 5px; }
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px; }
+  #search_form th {
+    padding-left: 8px;
+    color: white;
+    font-size: 12px;
+    text-align: left; }
+
+#search_result {
+  padding: 20px;
+  font-size: 35px;
+  font-weight: bold;
+  color: white;
+  text-align: center; }
 
 #footer {
   padding: 10px;

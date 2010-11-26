@@ -1,19 +1,27 @@
-#nota_form{:title => "New Note"}
+#nota_form
   = form_for :nota, :remote => true do |f|
     = f.error_messages
+    %table
+      %tr
+        %th= f.label :category_id
+        %th= f.label :topic_id
+      %tr
+        %td= collection_select(:nota,:category_id,Category.all, :id, :name, :prompt => "")
+        %td= collection_select(:nota,:topic_id, Topic.all, :id, :name, :prompt => "" )
+      %tr
+        %th{:colspan => 2}
+          = f.label :title
+      %tr
+        %td{:colspan => 2}
+          = f.text_field :title
+      %tr
+        %th{:colspan => 2}
+          = f.label :body
+      %tr
+        %td{:colspan => 2}
+          = f.text_area :body, :class => 'mceEditor'
+        
+    
     %p
-      %b= f.label :title
-      = f.text_field :title, :size => 31
-    %p
-      %b= f.label :body
-      = f.text_area :body, :rows => 9, :cols => 30, :class => 'word_count'
-      %span.counter
-    %p
-      %b= f.label :topic_id
-      = collection_select(:nota,:topic_id, Topic.all, :id, :name, :prompt => true)
-    %p
-      %b= f.label :category_id
-      = collection_select(:nota,:category_id,Category.all, :id, :name, :prompt => true)
-    %p{:style => "float:right;"}
       = submit_tag "Save Note"
       == or #{link_to_function 'Cancel',"$('#dialog-form').dialog('close')",:id => "link_cancel"}

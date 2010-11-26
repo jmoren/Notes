@@ -1,12 +1,17 @@
 Notas::Application.routes.draw do
-
+  #match 'notas/add_vote' => "notas#add_vote"
   match 'pages/topic/:topic' => "pages#topic"
   match 'pages/category/:category' => "pages#category"
   resources :notas do
     collection do
+      #post :add_vote
       post :update_attribute_on_the_spot
     end
+    member do
+      post :add_vote
+    end
   end
+  match '/' => redirect("/notas")
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

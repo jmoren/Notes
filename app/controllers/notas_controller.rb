@@ -1,8 +1,22 @@
 class NotasController < ApplicationController
   can_edit_on_the_spot
+  uses_tiny_mce :only => [:index,:new, :create],:options => {
+                              :theme => 'advanced',
+                              :theme_advanced_resizing => true,
+                              :plugins => %w{ table fullscreen }
+                            }
+  
   before_filter :set_controller
   def index
-    @notas = Nota.pagination(params[:page])
+    if params[:query]
+      options = {}
+      options[:body] = params[:query][:body] unless params[:query][:body].blank?
+      options[:topic_id] = Topic.find_by_name(params[:query][:topic]) unless params[:query][:topic].blank?
+      options[:category_id] = Category.find_by_name(params[:query][:category]) unless params[:query][:category].blank?
+      @notas = Nota.where(options).paginate(:page => params[:page], :per_page => 12)
+    else
+      @notas = Nota.pagination(params[:page])
+    end
   end
   
   def show
@@ -46,11 +60,10 @@ class NotasController < ApplicationController
     @notas_controller = true
   end
 
-  def search
-    unless params[:query]
-      search = params[:query][:search]
-      @notas = Nota.where(:body => search )
-    end
+  def add_vote
+    @nota = Nota.find(params[:id])
+    vote = @nota.vote + 1
+    @nota.update_attributes(:vote => vote)
   end
   
 end

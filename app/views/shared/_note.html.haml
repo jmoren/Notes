@@ -4,4 +4,7 @@
   %h3
     == Title: #{@nota.title}
   %p
-    = @nota.body
+    = @nota.body.html_safe
+  #votes
+    = render :partial => "shared/votes"
+ 
