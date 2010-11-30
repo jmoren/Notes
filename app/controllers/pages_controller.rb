@@ -1,8 +1,5 @@
 class PagesController < ApplicationController
-  uses_tiny_mce :options => {
-                              :theme => 'advanced',
-                              :plugins => %w{ table }
-                            }
+  
   def topic
     if params[:topic]
       topic = params[:topic]

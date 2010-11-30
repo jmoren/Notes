@@ -2,7 +2,6 @@ class Nota < ActiveRecord::Base
   belongs_to :category
   belongs_to :topic
 
-  acts_as_commentable
   acts_as_taggable
 
   attr_accessible :title, :body, :topic_id, :category_id, :vote,:views, :tag_list

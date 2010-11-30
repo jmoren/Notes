@@ -7,9 +7,9 @@ gem 'mysql2'
 gem 'nifty-generators'
 gem 'haml'
 gem 'will_paginate', '3.0.pre2'
-gem 'tiny_mce'
 gem 'acts-as-taggable-on'
-gem 'acts_as_commentable'
+gem 'ckeditor', '3.4.2.pre'
+gem 'on_the_spot_edit'
 #gem 'on_the_spot'
 
 # Use unicorn as the web server

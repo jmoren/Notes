@@ -21,10 +21,10 @@
         = render :partial => "shared/votes"
       %p
         %span.value
-          == #{@nota.views} views
+          == #{@nota.views} #{@nota.views == 1 ? 'view' : 'views'}
       %p
         %span.value
-          0 Answers
+          0 Comments
 
     %span#link_index.right
       = link_to "Back to Index", notas_path

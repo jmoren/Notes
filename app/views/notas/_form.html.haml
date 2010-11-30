@@ -1,32 +1,22 @@
 #nota_form
   = form_for @nota do |f|
     = f.error_messages
-    %table
-      %tr
-        %th= f.label :category_id
-        %th= f.label :topic_id
-      %tr
-        %td= collection_select(:nota,:category_id,Category.all, :id, :name, :prompt => "")
-        %td= collection_select(:nota,:topic_id, Topic.all, :id, :name, :prompt => "" )
-      %tr
-        %th{:colspan => 2}
-          = f.label :title
-      %tr
-        %td{:colspan => 2}
-          = f.text_field :title
-      %tr
-        %th{:colspan => 2}
-          = f.label :body
-      %tr
-        %td{:colspan => 2}
-          = f.text_area :body, :class => 'mceEditor'
-      %tr
-        %th{:colspan => 2}
-          = f.label :tag_list
-      %tr
-        %td{:colspan => 2}
-          = text_field :nota,:tag_list
-    
+    %p
+      %span.label= f.label :category_id
+      = collection_select(:nota,:category_id,Category.all, :id, :name, :prompt => "")
+    %p
+      %span.label= f.label :topic_id
+      = collection_select(:nota,:topic_id, Topic.all, :id, :name, :prompt => "" )
+    %p
+      %span.label= f.label :title
+      = f.text_field :title
+    %p
+      = f.label :body, :class => 'body_label'
+    %p
+      = f.cktext_area :body, :width => '90%', :height => '250px', :class => 'inputs'
+    %p
+      %span.label= f.label :tag_list
+      = text_field :nota,:tag_list
     %p
       = submit_tag "Save Note"
       == or #{link_to 'Cancel',notas_path,:class => "link_cancel"}

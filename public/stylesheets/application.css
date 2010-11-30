@@ -64,6 +64,7 @@ body {
     margin: 0; }
 
 #nota_form {
+  margin: 20px 0;
   border: solid 5px #cecece;
   padding: 10px;
   border-radius: 5px; }
@@ -72,12 +73,19 @@ body {
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px; }
-  #nota_form th {
+  #nota_form .label {
+    float: left;
     text-align: left;
+    padding: 5px 10px;
+    color: white;
+    font-weight: bold;
+    width: 70px; }
+  #nota_form .inputs {
+    padding-left: 5px; }
+  #nota_form .body_label {
     padding: 10px;
-    color: white; }
-  #nota_form td {
-    padding: 0 5px; }
+    color: white;
+    font-weight: bold; }
   #nota_form a {
     color: white;
     text-decoration: none; }

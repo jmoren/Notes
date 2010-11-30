@@ -1,9 +1,5 @@
 class NotasController < ApplicationController
-  uses_tiny_mce :only => [:index,:new, :create,:search,:show],:options => {
-                              :theme => 'advanced',
-                              :plugins => %w{ table }
-                            }
-  
+
   before_filter :set_controller
   def index
     @notas = Nota.pagination(params[:page])

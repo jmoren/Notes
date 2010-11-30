@@ -1,4 +1,4 @@
 %span.value
-  == #{@nota.vote} #{(@nota.vote > 1) ? 'votes' : 'vote'}
+  == #{@nota.vote} #{(@nota.vote == 1) ? 'vote' : 'votes'}
 %span#vote.right
   = link_to "VOTE!", add_vote_nota_path(@nota), :remote => true, :method => "post"
