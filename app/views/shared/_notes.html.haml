@@ -22,18 +22,22 @@
           %p
             %u
               - if @notas_controller
-                %b= on_the_spot_edit nota, :title
+                %b= nota.title
               - else
                 %b= nota.title.capitalize
             %p{:style => "word-wrap:break-word;"}
               = truncate(word_wrap(nota.body,:line_width => 30), :length => 120).html_safe
-        %span
-          %small{:style => "float:left;"}
-            = link_to 'Show', nota, :class => "fancybox"  
-          %small{:style => "float:left;margin-left:60px;font-weight:bold;"}
-            == votes: #{nota.vote}
-          %small{:style => "float:right;"}
-            = nota.created_at.strftime('%d/%m/%Y')
+        #info_note
+          %small{:style => "float:left; width: 33%;text-align:left;"}
+            == Views: #{nota.views}
+          %small{:style => "float:left; width: 33%;text-align:center;"}
+            == Votes: #{nota.vote}
+        %p
+          %span{:id => "footer_#{nota.id}"}
+            %small{:style => "float:left; width: 33%;text-align:left;"}
+              = link_to 'Show', nota
+            %small{:style => "float:right; width: 33%;text-align:right;"}
+              = nota.created_at.strftime('%d/%m/%Y')
   - else
     #search_result
       There were no notes. Try again!

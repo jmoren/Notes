@@ -1,27 +1,17 @@
 class NotasController < ApplicationController
-  can_edit_on_the_spot
-  uses_tiny_mce :only => [:index,:new, :create],:options => {
+  uses_tiny_mce :only => [:index,:new, :create,:search,:show],:options => {
                               :theme => 'advanced',
-                              :theme_advanced_resizing => true,
-                              :plugins => %w{ table fullscreen }
+                              :plugins => %w{ table }
                             }
   
   before_filter :set_controller
   def index
-    if params[:query]
-      options = {}
-      options[:body] = params[:query][:body] unless params[:query][:body].blank?
-      options[:topic_id] = Topic.find_by_name(params[:query][:topic]) unless params[:query][:topic].blank?
-      options[:category_id] = Category.find_by_name(params[:query][:category]) unless params[:query][:category].blank?
-      @notas = Nota.where(options).paginate(:page => params[:page], :per_page => 12)
-    else
-      @notas = Nota.pagination(params[:page])
-    end
+    @notas = Nota.pagination(params[:page])
   end
   
   def show
     @nota = Nota.find(params[:id])
-    render :partial => 'shared/note'
+    @nota.add_view unless @nota.new_record?
   end
   
   def new
@@ -32,7 +22,7 @@ class NotasController < ApplicationController
     @nota = Nota.new(params[:nota])
     if @nota.save
       flash[:notice] = "Successfully created nota."
-      @notas = Nota.pagination(params[:page])
+      redirect_to notas_path
     end
   end
   

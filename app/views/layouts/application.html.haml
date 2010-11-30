@@ -4,9 +4,8 @@
     %title
       = yield(:title) || "Tips & Notes"
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}
-    = stylesheet_link_tag "application","fancybox","tipsy","menu","jquery"
-    = javascript_include_tag :defaults,'jquery.tipsy','jquery.fancybox-1.3.4.pack'
-    = javascript_include_tag :on_the_spot, 'jquery-ui-1.8.6.custom.min'
+    = stylesheet_link_tag "application","tipsy","menu","jquery"
+    = javascript_include_tag :defaults,'jquery.tipsy','jquery-ui-1.8.6.custom.min'
     = include_tiny_mce_if_needed
     = csrf_meta_tag
     = yield(:head)
@@ -24,10 +23,10 @@
       %div{:id => "flash_message"}
       
       #content
-        = link_to "Nueva Nota", "#", :class => "triggerLeft", :id => "modalForm"
+        = link_to "Nueva Nota", new_nota_path, :class => "triggerLeft", :id => "modalForm"
         = link_to "Menu","#", :class => "trigger"
         #search_form
-          = form_tag @nota, :method => "get" do
+          = form_tag search_notas_path, :method => "get" do
             %table
               %th category
               %th topic
@@ -63,3 +62,5 @@
           %li
             = link_to top.name, :controller => "pages", :action => "topic", :topic => top.name
             ==(#{top.notas.count})
+=# #dialog-form
+=# render :partial => 'shared/form'

@@ -1,19 +1,32 @@
--title "New Note"
 #nota_form
-  - form_for @nota do |f|
+  = form_for @nota do |f|
     = f.error_messages
-    %p
-      %b= f.label :title
-      = f.text_field :title, :size => 31
-    %p
-      %b= f.label :body
-      = f.text_area :body, :rows => 9, :cols => 30, :class => 'word_count'
-      %span.counter
-    %p
-      %b= f.label :topic_id
-      = collection_select(:nota,:topic_id, Topic.all, :id, :name, :prompt => true)
-    %p
-      %b= f.label :category_id
-      = collection_select(:nota,:category_id,Category.all, :id, :name, :prompt => true)
+    %table
+      %tr
+        %th= f.label :category_id
+        %th= f.label :topic_id
+      %tr
+        %td= collection_select(:nota,:category_id,Category.all, :id, :name, :prompt => "")
+        %td= collection_select(:nota,:topic_id, Topic.all, :id, :name, :prompt => "" )
+      %tr
+        %th{:colspan => 2}
+          = f.label :title
+      %tr
+        %td{:colspan => 2}
+          = f.text_field :title
+      %tr
+        %th{:colspan => 2}
+          = f.label :body
+      %tr
+        %td{:colspan => 2}
+          = f.text_area :body, :class => 'mceEditor'
+      %tr
+        %th{:colspan => 2}
+          = f.label :tag_list
+      %tr
+        %td{:colspan => 2}
+          = text_field :nota,:tag_list
+    
     %p
       = submit_tag "Save Note"
+      == or #{link_to 'Cancel',notas_path,:class => "link_cancel"}

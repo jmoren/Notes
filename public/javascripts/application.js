@@ -12,35 +12,35 @@ $(document).ready(function(){
       return false;
     });
 
-    $("a.fancybox").fancybox({
+    /*$("a.fancybox").fancybox({
       zoomSpeedIn: 300,
       zoomSpeedOut: 300,
       overlayShow:true
-    });
-    $(function() {
+    });*/
+    /*$(function() {
 		// a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
-      $( "#dialog:ui-dialog" ).dialog( "close" );
-			$( "#dialog-modal" ).dialog({
+     $( "#dialog:ui-dialog" ).dialog( "close" );
+    $( "#dialog-modal" ).dialog({
     		height: 140,
       	modal: true
       });
     });
-    
-    $(function() {
-      $( "#sortable" ).sortable({placeholder: "ui-state-highlight"});
-      $( "#sortable" ).disableSelection();
+    */
+   $(function() {
+     $( "#sortable" ).sortable({placeholder: "ui-state-highlight"});
+     $( "#sortable" ).disableSelection();
     });
-    $(function() {
+   $(function() {
 		// a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
-      $( "#dialog:ui-dialog" ).dialog( "close" );
-      $( "#dialog-form" ).dialog({
+     $( "#dialog:ui-dialog" ).dialog( "close" );
+     $( "#dialog-form" ).dialog({
         autoOpen: false,
-        height: 520,
+        height: 600,
         width: 650,
   			modal: true,
         close: function() {
-          $('form input[type*=text], form select').val(" ");
-          $('#nota_body_ifr').contents().filter(function() {
+         $('form input[type*=text], form select').val(" ");
+         $('#nota_body_ifr').contents().filter(function() {
             this.body.children[0].childNodes[0].nodeValue = "";
         });
 			}

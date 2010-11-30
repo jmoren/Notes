@@ -1,2 +1,30 @@
-#nota_show
- = render :partial => 'shared/note'
+- title "N & T - #{@nota.title}"
+
+#nota_container
+  #nota_show.left
+    .content
+      %span#header_note.right
+        = "#{@nota.category.nil? ? "Uncategorized" : @nota.category.name} :: #{@nota.topic.nil? ? "Off Topic" : @nota.topic.name}"
+      %span#title_note
+        == #{@nota.title}
+      #body_note
+        = simple_format(@nota.body.html_safe)
+    - unless @nota.tags.empty?
+      #tags
+        Tags:
+        - @nota.tags.each do |tag|
+          %span.tag
+            = link_to tag,:controller => "pages", :action => "tags", :tag => tag.name
+  #nota_panel.right
+    .content
+      %span#votes
+        = render :partial => "shared/votes"
+      %p
+        %span.value
+          == #{@nota.views} views
+      %p
+        %span.value
+          0 Answers
+
+    %span#link_index.right
+      = link_to "Back to Index", notas_path

@@ -67,17 +67,20 @@ body {
   border: solid 5px #cecece;
   padding: 10px;
   border-radius: 5px; }
-  #nota_form input[type=text], #nota_form textarea {
+  #nota_form input[type=text], #nota_form select, #nota_form input[type=submit] {
     border: 1px solid #cecece;
     border-radius: 5px;
     -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    width: 100%; }
+    -webkit-border-radius: 5px; }
   #nota_form th {
     text-align: left;
-    padding: 10px; }
+    padding: 10px;
+    color: white; }
   #nota_form td {
     padding: 0 5px; }
+  #nota_form a {
+    color: white;
+    text-decoration: none; }
 
 #sortable li {
   margin: 20px 15px;
@@ -87,42 +90,105 @@ body {
   height: 200px;
   padding: 15px;
   display: inline; }
-
-.nota {
+#sortable .nota {
   background: #dbd7d7;
   width: 220px;
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px; }
-  .nota .content {
+  #sortable .nota .content {
     height: 180px; }
-  .nota .link {
+  #sortable .nota .link {
     clear: both; }
+  #sortable .nota .title span {
+    cursor: pointer;
+    font-size: 12px;
+    padding: 3px; }
+  #sortable .nota .title .info a {
+    color: black;
+    text-decoration: none; }
 
 .clearfix {
   clear: both; }
 
-#nota_show {
-  background: #dbd7d7;
-  padding: 15px;
-  border-radius: 10px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
+#nota_container {
   min-height: 300px;
-  min-width: 350px; }
+  margin: 20px 0; }
+  #nota_container .content {
+    min-height: 260px;
+    font-size: 1em; }
+  #nota_container #nota_show {
+    min-height: 300px;
+    width: 70%;
+    background: #dbd7d7;
+    padding: 15px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px; }
+    #nota_container #nota_show #header_note {
+      font-size: 1em; }
+    #nota_container #nota_show #title_note {
+      font-size: 2em;
+      font-weight: bold; }
+    #nota_container #nota_show #body_note {
+      font-size: 2em; }
+    #nota_container #nota_show #tags {
+      font-size: 13px;
+      font-weight: bold; }
+      #nota_container #nota_show #tags .tag {
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border: solid 1px #222222;
+        padding: 5px;
+        background-color: #222222;
+        margin: 10px; }
+        #nota_container #nota_show #tags .tag a {
+          color: white;
+          text-decoration: none; }
+  #nota_container #nota_panel {
+    min-height: 300px;
+    width: 20%;
+    background: #dbd7d7;
+    padding: 15px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    color: #222222; }
+    #nota_container #nota_panel .value {
+      font-size: 2em;
+      font-weight: bold; }
+    #nota_container #nota_panel #vote {
+      border-radius: 5px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border: solid 1px;
+      padding: 3px 8px;
+      background-color: #222222;
+      font-size: 12px; }
+      #nota_container #nota_panel #vote a {
+        color: white;
+        text-decoration: none; }
+      #nota_container #nota_panel #vote:hover {
+        background-color: #cccccc; }
+        #nota_container #nota_panel #vote:hover a {
+          color: #222222; }
+    #nota_container #nota_panel #link_index a {
+      margin: 10px;
+      padding: 5px;
+      text-decoration: none;
+      border: 1px solid #222222;
+      border-radius: 4px;
+      -moz-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      background-color: #222222;
+      color: #cccccc; }
 
-.title {
-  font-size: 10px;
-  padding: 3px; }
-  .title span {
-    cursor: pointer; }
-  .title .info a {
-    color: black;
-    text-decoration: none; }
-  .title .left {
-    float: left; }
-  .title .right {
-    float: right; }
+.left {
+  float: left; }
+
+.right {
+  float: right; }
 
 #index {
   margin: 15px 5px 15px -25px;
@@ -207,3 +273,35 @@ body {
   padding: 10px;
   text-align: center;
   color: white; }
+
+#new_answer {
+  width: 70%;
+  margin-top: 20px; }
+  #new_answer textarea {
+    border: 1px solid #cecece;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px; }
+  #new_answer label {
+    color: white; }
+
+#link_new_answer {
+  color: #222222;
+  text-decoration: none;
+  background: #dbd7d7;
+  padding: 10px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px; }
+
+#notas_answer {
+  margin: 20px 0;
+  width: 73%; }
+  #notas_answer .answer {
+    background: #dbd7d7;
+    padding: 15px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    color: #222222;
+    margin: 15px 0; }

@@ -21,4 +21,11 @@ class PagesController < ApplicationController
     end
   end
 
+  def tags
+    if params[:tag]
+      tag = params[:tag]
+      @notas = Nota.tagged_with(tag).paginate(:page => params[:page], :per_page => 12)
+    end
+  end
+
 end
