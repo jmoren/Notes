@@ -11,14 +11,6 @@
     - for nota in @notas
       %li{:class => "nota dialog-modal"}
         .content
-          %span.title
-            - unless nota.topic.nil?
-              %span.info.right{:title => "Topic: #{nota.topic.name} (#{nota.topic.notes})"}
-                %b= link_to nota.topic.name, :controller => "pages", :action => "topic", :topic => nota.topic.name
-            - unless nota.category_id.nil?
-              %span.info.left{:title => "Category: #{nota.category.name}"}
-                %b= link_to nota.category.name,:controller => "pages", :action => "category", :category => nota.category.name
-          %br
           %p
             %u
               - if @notas_controller
@@ -28,11 +20,13 @@
             %p{:style => "word-wrap:break-word;"}
               = truncate(word_wrap(nota.body,:line_width => 30), :length => 120).html_safe
         #info_note
-          %small{:style => "float:left; width: 33%;text-align:left;"}
+          %small{:style => "float:left; text-align:left;"}
             == Views: #{nota.views}
-          %small{:style => "float:left; width: 33%;text-align:center;"}
+          %small{:style => "float:left;text-align:left;margin-left:5px"}
             == Votes: #{nota.vote}
-        %p
+          %small{:style => "float:left; text-align:left;margin-left:5px"}
+            == Comments: #{nota.comments.size}
+          %br
           %span{:id => "footer_#{nota.id}"}
             %small{:style => "float:left; width: 33%;text-align:left;"}
               = link_to 'Show', nota

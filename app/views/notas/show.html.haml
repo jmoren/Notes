@@ -1,30 +1,52 @@
 - title "N & T - #{@nota.title}"
 
 #nota_container
-  #nota_show.left
+  #nota_show.left.wrap
     .content
       %span#header_note.right
         = "#{@nota.category.nil? ? "Uncategorized" : @nota.category.name} :: #{@nota.topic.nil? ? "Off Topic" : @nota.topic.name}"
+      .clearfix
       %span#title_note
-        == #{@nota.title}
+        = on_the_spot_edit @nota, :title, :tooltip => "click to edit"
       #body_note
-        = simple_format(@nota.body.html_safe)
+        = @nota.body.html_safe
     - unless @nota.tags.empty?
       #tags
         Tags:
         - @nota.tags.each do |tag|
           %span.tag
             = link_to tag,:controller => "pages", :action => "tags", :tag => tag.name
-  #nota_panel.right
+  #nota_panel.right.wrap
     .content
       %span#votes
         = render :partial => "shared/votes"
       %p
         %span.value
           == #{@nota.views} #{@nota.views == 1 ? 'view' : 'views'}
-      %p
-        %span.value
-          0 Comments
-
+      #comment_count
+        = render 'shared/comments_count'
+        
     %span#link_index.right
       = link_to "Back to Index", notas_path
+
+.clearfix
+%script
+  function newComment(){
+  $('#comment_form').fadeToggle();
+  $('#add_comment').fadeToggle();
+  };
+%br
+#list_comments.wrap
+  = render :partial => 'shared/comments', :nota => @nota
+%br
+#comment_form{:style => "display:none;color: #fff;"}
+  .wrap
+    .left
+      = render 'comments/form'
+    .right{:style => "color: #000"}
+      Datos del usuario!
+    .clearfix
+%br
+#add_comment
+  %span.wrap
+    = link_to_function "Add Comment","newComment()"

@@ -1,13 +1,16 @@
 Notas::Application.routes.draw do
+  
+
   #match 'notas/search' => "notas#search"
   match 'pages/topic/:topic' => "pages#topic"
   match 'pages/category/:category' => "pages#category"
   match 'pages/tags/:tag' => "pages#tags"
   
   resources :notas do
+    resources :comments, :only => [:new,:create]
     collection do
-      #post :add_vote
       get :search
+      post :update_attribute_on_the_spot
     end
     member do
       post :add_vote

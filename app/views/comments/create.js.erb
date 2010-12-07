@@ -1,0 +1,5 @@
+$("#list_comments").html("<%= escape_javascript( render 'shared/comments')%>");
+$('#comment_count').html("<%= escape_javascript(render 'shared/comments_count')%> ")
+$('#comment_form').slideToggle('slow');
+$('form.new_comment textarea').val("")
+$('#add_comment').fadeToggle();

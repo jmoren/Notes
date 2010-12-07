@@ -1,5 +1,5 @@
 class NotasController < ApplicationController
-
+  can_edit_on_the_spot
   before_filter :set_controller
   def index
     @notas = Nota.pagination(params[:page])
@@ -18,7 +18,9 @@ class NotasController < ApplicationController
     @nota = Nota.new(params[:nota])
     if @nota.save
       flash[:notice] = "Successfully created nota."
-      redirect_to notas_path
+      redirect_to @nota
+    else
+      render 'new'
     end
   end
   
@@ -51,5 +53,5 @@ class NotasController < ApplicationController
     vote = @nota.vote + 1
     @nota.update_attributes(:vote => vote)
   end
-  
+   
 end
