@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(:version => 20101201151403) do
     t.text     "body"
     t.integer  "topic_id"
     t.integer  "category_id"
+    t.integer  "vote",        :default => 0
+    t.integer  "views",       :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "vote",        :default => 0, :null => false
-    t.integer  "views",       :default => 0, :null => false
   end
 
   create_table "taggings", :force => true do |t|

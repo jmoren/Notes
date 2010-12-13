@@ -35,3 +35,9 @@ gem 'on_the_spot'
 #   gem 'webrat'
 # end
 gem "mocha", :group => :test
+
+group :development, :test do
+   gem 'webrat'
+   gem 'yaml_db'
+end
+

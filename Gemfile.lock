@@ -48,6 +48,7 @@ GEM
       rake
     mysql2 (0.2.6)
     nifty-generators (0.4.2)
+    nokogiri (1.4.4)
     on_the_spot (0.0.5)
       json_pure (>= 1.4.6)
     polyglot (0.3.1)
@@ -74,7 +75,12 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
+    webrat (0.7.2)
+      nokogiri (>= 1.2.0)
+      rack (>= 1.0)
+      rack-test (>= 0.5.3)
     will_paginate (3.0.pre2)
+    yaml_db (0.2.0)
 
 PLATFORMS
   ruby
@@ -88,4 +94,6 @@ DEPENDENCIES
   nifty-generators
   on_the_spot
   rails (= 3.0.3)
+  webrat
   will_paginate (= 3.0.pre2)
+  yaml_db
