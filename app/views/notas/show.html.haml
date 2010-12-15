@@ -9,7 +9,7 @@
       %span#title_note
         = on_the_spot_edit @nota, :title, :tooltip => "click to edit"
       #body_note
-        = @nota.body.html_safe
+        ~ textilize @nota.body
     - unless @nota.tags.empty?
       #tags
         Tags:
@@ -25,7 +25,7 @@
           == #{@nota.views} #{@nota.views == 1 ? 'view' : 'views'}
       #comment_count
         = render 'shared/comments_count'
-        
+   
     %span#link_index.right
       = link_to "Back to Index", notas_path
 

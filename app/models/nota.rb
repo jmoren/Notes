@@ -6,7 +6,7 @@ class Nota < ActiveRecord::Base
 
   attr_accessible :title, :body, :topic_id, :category_id, :vote,:views, :tag_list
   
-  validates :title, :body, :topic_id, :category_id, :presence => true
+  validates :title, :body, :presence => true
   validates_length_of :title, :within => 3..20
 
   def self.pagination(page)

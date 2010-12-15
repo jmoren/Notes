@@ -11,8 +11,8 @@ gem 'acts-as-taggable-on'
 gem 'ckeditor', '3.4.2.pre'
 gem 'on_the_spot'
 #gem 'highlight', :require => 'simplabs/highlight'
-#gem 'coderay'
-#gem 'RedCloth'
+gem 'coderay'
+gem 'RedCloth'
 # Use unicorn as the web server
 # gem 'unicorn'
 

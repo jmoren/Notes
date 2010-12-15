@@ -17,7 +17,7 @@
                 %b= nota.title
               - else
                 %b= nota.title.capitalize
-            %p{:style => "word-wrap:break-word;"}
+            %p
               = truncate(word_wrap(nota.body,:line_width => 30), :length => 120).html_safe
         #info_note
           %small{:style => "float:left; text-align:left;"}
