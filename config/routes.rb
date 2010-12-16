@@ -1,11 +1,11 @@
 Notas::Application.routes.draw do
-  
+  devise_for :users
 
   #match 'notas/search' => "notas#search"
   match 'pages/topic/:topic' => "pages#topic"
   match 'pages/category/:category' => "pages#category"
   match 'pages/tags/:tag' => "pages#tags"
-  
+
   resources :notas do
     resources :comments, :only => [:new,:create]
     collection do
@@ -16,6 +16,8 @@ Notas::Application.routes.draw do
       post :add_vote
     end
   end
+
+  root :to => "notas#index"
   match '/' => redirect("/notas")
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -74,3 +76,4 @@ Notas::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
 end
+

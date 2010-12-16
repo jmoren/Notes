@@ -10,6 +10,10 @@ gem 'will_paginate', '3.0.pre2'
 gem 'acts-as-taggable-on'
 gem 'ckeditor', '3.4.2.pre'
 gem 'on_the_spot'
+
+#Authentication
+gem "devise"
+gem "devise_ldap_authenticatable"
 #gem 'highlight', :require => 'simplabs/highlight'
 #gem 'coderay'
 #gem 'RedCloth'
@@ -20,7 +24,7 @@ gem 'on_the_spot'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'ruby-debug'
+gem 'ruby-debug19', :require => "ruby-debug"
 
 # Bundle the extra gems:
 # gem 'bj'

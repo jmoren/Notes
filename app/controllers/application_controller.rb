@@ -1,4 +1,8 @@
 class ApplicationController < ActionController::Base
+  rescue_from DeviseLdapAuthenticatable::LdapException do |exception|
+    render :text => exception, :status => 500
+  end
+
   protect_from_forgery
   before_filter do
     if params[:query]
@@ -13,5 +17,6 @@ class ApplicationController < ActionController::Base
     options[:category_id] = Category.find_by_name(params[:query][:category]) unless params[:query][:category].blank?
     @notas = Nota.where(options).paginate(:page => params[:page], :per_page => 12)
   end
- 
+
 end
+
