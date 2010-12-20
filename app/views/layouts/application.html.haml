@@ -11,66 +11,29 @@
     = yield(:head)
 
   %body
-    #container
-      #header
-        %span
-          - if show_title?
-            = yield(:title) || "Tips & Notes"
-        %br
-        #subhead
+    #header
+      #title
+        - if show_title?
+          = yield(:title) || "Tips & Notes"
+        #subtitle
           %span
             %small shared notes
-      %div{:id => "flash_message"}
+    .clear
+    #container
+      #side_panel
+        #new_note
+          = link_to "Nueva Nota", new_nota_path
+        #tag_cloud
+          - Nota.tag_counts_on(:tags).collect(&:name).each do |tag|
+            %p
+              = link_to tag,:controller => "pages", :action => "tags", :tag => tag
+              == (#{Nota.tagged_with(tag).size})
+        #user_information
+          %p
+            Logged as
+          %p
+            Salir
 
       #content
-        = link_to "Nueva Nota", new_nota_path, :class => "triggerLeft", :id => "modalForm"
-        = link_to "Menu","#", :class => "trigger"
-        .user-info
-          - if current_user
-            = link_to "log out", destroy_user_session_path
-            |
-            = current_user.email
-          - else
-            = link_to "sign in", new_user_session_path
-            |
-            = link_to "sign up", new_user_registration_path
-        #search_form
-          = form_tag search_notas_path, :method => "get" do
-            %table
-              %th category
-              %th topic
-              %th body
-              %tr
-                %td= select :query, :category, Category.all.collect(&:name), :prompt => ""
-                %td= select :query, :topic, Topic.all.collect(&:name), :prompt => ""
-                %td= text_field :query, :body, :size => 20
-                %td= submit_tag "Search now!"
-        .clearfix
         = yield
-      .clearfix
-      #footer
-        %p
-          Aca va el footer
-#panel
-  .columns
-    .colleft
-      %h3
-        Categories
-      %ul
-        - Category.all.each do |cat|
-          %li
-            = link_to cat.name, :controller => "pages", :action => "category", :category => cat.name
-    .colright
-      %h3
-        Topics
-      %ul
-        %li
-          = link_to "All notes", notas_path
-          ==(#{Nota.count})
-        - Topic.all.each do |top|
-          %li
-            = link_to top.name, :controller => "pages", :action => "topic", :topic => top.name
-            ==(#{top.notas.count})
-=# #dialog-form
-=# render :partial => 'shared/form'
-
+        

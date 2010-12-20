@@ -1,46 +1,34 @@
-= will_paginate @notas, :previous_label => "Previous", :next_label => "Next"
-#note_counter
-  %small
-  == We have #{Nota.count} shared notes
-%p
-  - flash.each do |name, msg|
-    = content_tag :div, msg, :id => "flash_#{name}", :class => "flash"
-    
-%ul#sortable
-  - unless @notas.empty?
-    - for nota in @notas
-      %li{:class => "nota dialog-modal"}
-        .content
-          %p
-            %u
-              - if @notas_controller
-                %b= nota.title
-              - else
-                %b= nota.title.capitalize
-            %p
-              = truncate(word_wrap(nota.body,:line_width => 30), :length => 120).html_safe
-        #info_note
-          %small{:style => "float:left; text-align:left;"}
-            == Views: #{nota.views}
-          %small{:style => "float:left;text-align:left;margin-left:5px"}
-            == Votes: #{nota.vote}
-          %small{:style => "float:left; text-align:left;margin-left:5px"}
-            == Comments: #{nota.comments.size}
+
+- unless @notas.empty?
+  - for nota in @notas
+    .note
+      %span
+        .title
+          %span.date
+            == created #{distance_of_time_in_words(nota.created_at, Time.now)} by me
           %br
-          %span{:id => "footer_#{nota.id}"}
-            %small{:style => "float:left; width: 33%;text-align:left;"}
-              = link_to 'Show', nota
-            %small{:style => "float:right; width: 33%;text-align:right;"}
-              = nota.created_at.strftime('%d/%m/%Y')
-  - else
-    #search_result
-      There were no notes. Try again!
+          %span.info
+            = link_to nota.title.capitalize, nota_path(nota)
+        .body
+          = truncate(word_wrap(nota.body,:line_width => 30), :length => 120).html_safe
+        .tags
+          - unless nota.tags.empty?
+            - nota.tags.each do |tag|
+              %span.tag
+                = link_to tag,:controller => "pages", :action => "tags", :tag => tag.name
+          - else
+            untagged
+  .clear
+  = will_paginate @notas, :previous_label => "Previous", :next_label => "Next"
+- else
+  #search_result
+    There were no notes. Try again!
 %script
-  $(function() {
-  $( "#sortable" ).sortable({placeholder: "ui-state-highlight"});
-  $( "#sortable" ).disableSelection();
-  });
-  $('.info').tipsy({gravity: 'n'});
-  $('.flash').dialog({ autoOpen: true, height: 100});
+  //$(function() {
+  //$( "#sortable" ).sortable({placeholder: "ui-state-highlight"});
+  //$( "#sortable" ).disableSelection();
+  //});
+  //$('.info').tipsy({gravity: 'e'});
+  //$('.flash').dialog({ autoOpen: true, height: 100});
   
   
