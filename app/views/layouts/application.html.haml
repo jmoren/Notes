@@ -4,9 +4,9 @@
     %title
       = yield(:title) || "Tips & Notes"
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}
-    = stylesheet_link_tag "application","tipsy","menu","jquery", "coderay"
+    = stylesheet_link_tag "application","tipsy","menu","jquery", 'highlight'
     = javascript_include_tag :defaults,'jquery.tipsy','jquery-ui-1.8.6.custom.min'
-    = javascript_include_tag :on_the_spot, :ckeditor, 'jquery-syntax/jquery.syntax.min.js'
+    = javascript_include_tag :on_the_spot, :ckeditor
     = csrf_meta_tag
     = yield(:head)
 

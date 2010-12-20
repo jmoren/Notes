@@ -15,8 +15,8 @@ gem 'on_the_spot'
 gem "devise"
 gem "devise_ldap_authenticatable"
 #gem 'highlight', :require => 'simplabs/highlight'
-#gem 'coderay'
-#gem 'RedCloth'
+gem 'coderay'
+gem 'RedCloth'
 # Use unicorn as the web server
 # gem 'unicorn'
 

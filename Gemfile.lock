@@ -1,6 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    RedCloth (4.2.3)
     abstract (1.0.0)
     actionmailer (3.0.3)
       actionpack (= 3.0.3)
@@ -42,6 +43,7 @@ GEM
     devise_ldap_authenticatable (0.4.6)
       devise (= 1.1.2)
       net-ldap (= 0.1.1)
+    coderay (0.9.6)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     haml (3.0.23)
@@ -110,10 +112,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  RedCloth
   acts-as-taggable-on
   ckeditor (= 3.4.2.pre)
   devise
   devise_ldap_authenticatable
+  coderay
   haml
   mocha
   mysql2
