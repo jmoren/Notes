@@ -17,7 +17,7 @@ class NotasController < ApplicationController
   end
 
   def create
-    @nota = Nota.new(params[:nota])
+    @nota = current_user.notas.build(params[:nota])
     if @nota.save
       flash[:notice] = "Successfully created nota."
       redirect_to @nota

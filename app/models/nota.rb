@@ -2,11 +2,13 @@ class Nota < ActiveRecord::Base
   belongs_to :category
   belongs_to :topic
   has_many :comments, :dependent => :destroy
+  belongs_to :user
+
   acts_as_taggable
 
   attr_accessible :title, :body, :topic_id, :category_id, :vote,:views, :tag_list
-  
-  validates :title, :body, :topic_id, :category_id, :presence => true
+
+  validates :title, :body, :user_id, :presence => true
   validates_length_of :title, :within => 3..20
 
   def self.pagination(page)
@@ -17,5 +19,6 @@ class Nota < ActiveRecord::Base
     views = self.views + 1
     self.update_attributes(:views => views)
   end
-  
+
 end
+
