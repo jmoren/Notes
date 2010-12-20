@@ -1,7 +1,7 @@
 $primary_color: #4b7399
 
 body
-  background-color: #fff
+  //background-color: whiteSmoke
   font:
     family: Verdana, Helvetica, Arial
     size: 14px
@@ -10,21 +10,84 @@ body
   clear: both
   height: 0
   overflow: hidden
-
-#container
-  margin: 0 auto
-  background: #fff
-  padding: 20px 40px
-  margin-top: 20px
-  #header
-    text-align: center
+#header
+  background-color: #222
+  color: whiteSmoke
+  margin-bottom: 20px
+  padding: 20px 60px
+  overflow: hidden
+  #title
+    float: left
     font-size: 40px
     font-weight: bold
-  #subhead
-    text-align: center
-    font-size: 20px
-    font-weight: bold
+    #subtitle
+      text-align: right
+      font-size: 15px
+#container
+  #flash_messages
+    .flash
+      border-radius: 6px
+      -webkit-border-radius: 6px
+      -moz-border-radius: 6px
+      font-weight: bold
+      :text-align center
+  #side_panel
+    padding: 15px
+    float: left
+    width: 150px
+    #new_note
+      a
+        font-size: 25px
+        background: #222
+        color: whiteSmoke
+        padding: 8px
+        text-decoration: none
+        border-radius: 10px
+        &:hover
+          color: #222
+          background: #fff
+          border-radius: 8px
+          border: 2px solid #222
+    #tag_cloud
+      background: #cecece
+      color: #222
+      border-radius: 15px
+      margin-top: 25px
+      padding: 20px
+      a
+        color: #222
 
+  #content
+    .note
+      background: #F2F2BF
+      display: inline
+      float: left
+      padding: 15px
+      margin: 15px
+      width: 200px
+      height: 200px
+      border: solid 1px #222
+      border-radius: 5px
+      -webkit-box-shadow: -2px 7px 17px #000222
+      -moz-box-shadow: -2px 7px 17px #000222
+      box-shadow: -2px 7px 17px #000222
+      .title
+        font-size: 20px
+        padding: 0 5px
+        margin: 0  0 10px  0
+        .date
+          float: right
+          font-size: 10px
+      .body
+        height: 100px
+        padding: 5px
+        margin: 8px 0
+      .tags
+        min-height: 15px
+        padding: 5px
+  #footer
+    padding: 10px
+    text-align: center
 #flash_notice,
 #flash_error
   border-radius: 6px
@@ -34,12 +97,6 @@ body
   :text-align center
 
   
-.flash
-  border-radius: 6px
-  -webkit-border-radius: 6px
-  -moz-border-radius: 6px
-  font-weight: bold
-  :text-align center
   
 .fieldWithErrors
   display: inline
@@ -60,7 +117,6 @@ body
     padding: 5px 10px
     font-weight: bold
     width: 70px
-    
   .inputs
     padding-left: 5px
   .body_label
@@ -104,8 +160,7 @@ body
         a
           color: #000
           text-decoration: none
-.clearfix
-  clear: both
+
 #nota_container
   min-height: 300px
   margin: 20px 0
@@ -176,19 +231,13 @@ body
 .right
   :float right
 
-#index
-  margin: 15px 5px 15px -25px
-  width: 100%
-
 .pagination
-  width: auto
-  text-align: left
-  margin: 10px 0 0 40px
+  padding: 10px
+  text-align: center
   em
     text-decoration: underline
   a,
   span
-    
     text-decoration: none
     padding: 1px 5px
     margin: 0 0 0 2px
@@ -218,9 +267,7 @@ body
       -webkit-border-radius: 3px
 
 #note_counter
-  color: #fff
   font-size: 15px
-  margin: 10px 0 0 45px
 .counter
   :color #696868
   :font-weight bold
@@ -247,11 +294,6 @@ body
   color: #fff
   text-align: center
 
-#footer
-  padding: 10px
-  text-align: center
-  color: #fff
-
 .on_the_spot_editing
   width: 100%
   border-radius: 5px
@@ -261,12 +303,6 @@ body
     border-radius: 8px
   input[type=submit]
     background: green
-.wrap
-  padding: 15px
-  border: 1px solid
-  border-radius: 10px
-  -moz-border-radius: 10px
-  -webkit-border-radius: 10px
 
 #comment_form
   input,textarea

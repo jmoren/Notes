@@ -3,9 +3,7 @@
 
 $(document).ready(function(){
     
-    //
-    $( "#modalForm" ).button().click(function() {$( "#dialog-form" ).dialog( "open");});
-    $('.info').tipsy({gravity: 'w'});
+    $('.info').tipsy({gravity: 's'});
     $(".trigger").click(function(){
       $("#panel").toggle("fast");
       $(this).toggleClass("active");
