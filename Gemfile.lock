@@ -73,6 +73,10 @@ GEM
       rake (>= 0.8.7)
       thor (~> 0.14.4)
     rake (0.8.7)
+    riddle (1.2.1)
+    thinking-sphinx (2.0.0)
+      activerecord (>= 3.0.0)
+      riddle (>= 1.2.0)
     thor (0.14.4)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
@@ -98,6 +102,7 @@ DEPENDENCIES
   nifty-generators
   on_the_spot
   rails (= 3.0.3)
+  thinking-sphinx (= 2.0.0)
   webrat
   will_paginate (= 3.0.pre2)
   yaml_db

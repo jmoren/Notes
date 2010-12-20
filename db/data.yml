@@ -1,0 +1,251 @@
+
+---
+categories:
+  columns:
+  - id
+  - name
+  - topage
+  - minage
+  - created_at
+  - updated_at
+  records:
+  - - 1
+    - Hombres A
+    - 99
+    - 18
+    - 2010-12-09 13:20:39 Z
+    - 2010-12-09 13:20:39 Z
+  - - 2
+    - Hombres B
+    - 99
+    - 18
+    - 2010-12-09 13:20:39 Z
+    - 2010-12-09 13:20:39 Z
+  - - 3
+    - Mujeres
+    - 99
+    - 15
+    - 2010-12-09 13:20:39 Z
+    - 2010-12-09 13:20:39 Z
+  - - 4
+    - Bantam
+    - 18
+    - 14
+    - 2010-12-09 13:20:39 Z
+    - 2010-12-09 13:20:39 Z
+  - - 5
+    - midget
+    - 18
+    - 14
+    - 2010-12-09 13:20:39 Z
+    - 2010-12-09 13:20:39 Z
+  - - 6
+    - peewee-14
+    - 14
+    - 12
+    - 2010-12-09 13:20:39 Z
+    - 2010-12-09 13:20:39 Z
+  - - 7
+    - peewee-12
+    - 12
+    - 8
+    - 2010-12-09 13:20:39 Z
+    - 2010-12-09 13:20:39 Z
+
+---
+coaches:
+  columns:
+  - id
+  - name
+  - lastname
+  - team_id
+  - email
+  - created_at
+  - updated_at
+  records:
+  - - 1
+    - Brain
+    - Brain
+    - 1
+    - example@example.com
+    - 2010-12-09 13:45:08 Z
+    - 2010-12-09 13:45:08 Z
+  - - 2
+    - Belen
+    - NoMeAcuerdo
+    - 3
+    - example@example.com
+    - 2010-12-09 19:33:38 Z
+    - 2010-12-09 19:33:38 Z
+
+---
+photos:
+  columns:
+  - id
+  - photoable_id
+  - photoable_type
+  - created_at
+  - updated_at
+  - thumb_file_name
+  - thumb_content_type
+  - thumb_file_size
+  - thumb_updated_at
+  records:
+  - - 1
+    - 1
+    - Team
+    - 2010-12-09 13:21:32 Z
+    - 2010-12-09 13:21:32 Z
+    -
+    -
+    -
+    -
+  - - 2
+    - 2
+    - Team
+    - 2010-12-09 18:59:27 Z
+    - 2010-12-09 18:59:27 Z
+    -
+    -
+    -
+    -
+  - - 3
+    - 3
+    - Team
+    - 2010-12-09 18:59:44 Z
+    - 2010-12-09 18:59:44 Z
+    -
+    -
+    -
+    -
+
+---
+players:
+  columns:
+  - id
+  - name
+  - lastname
+  - email
+  - gender
+  - birthday
+  - can_play
+  - captain
+  - team_id
+  - goalkeeper
+  - created_at
+  - updated_at
+  records:
+  - - 1
+    - Lisandro
+    - Mindel
+    - example@example.com
+    - Male
+    - 1981-12-09
+    - false
+    - false
+    - 1
+    - false
+    - 2010-12-09 13:21:51 Z
+    - 2010-12-09 13:45:41 Z
+  - - 2
+    - Pepe
+    - Pepe
+    - example@example.com
+    - Male
+    - 1993-12-09
+    - false
+    - false
+    - 1
+    - false
+    - 2010-12-09 13:30:14 Z
+    - 2010-12-09 13:31:18 Z
+  - - 3
+    - Jorge
+    - Moreno
+    - example@example.com
+    -
+    - 1979-02-28
+    - false
+    - false
+    - 1
+    - false
+    - 2010-12-09 13:44:56 Z
+    - 2010-12-09 13:44:56 Z
+  - - 5
+    - Andrea
+    - Belen
+    - example@example.com
+    -
+    - 1981-12-09
+    - false
+    - false
+    - 3
+    - false
+    - 2010-12-09 19:33:25 Z
+    - 2010-12-09 19:33:25 Z
+  - - 6
+    - Pepita
+    - Nidea
+    - example@example.com
+    - Male
+    - 1993-12-09
+    - false
+    - false
+    - 3
+    - false
+    - 2010-12-09 19:33:58 Z
+    - 2010-12-09 19:38:37 Z
+  - - 7
+    - Probnado
+    - Ahora
+    - example@example.com
+    -
+    - 1991-12-09
+    - false
+    - false
+    - 3
+    - false
+    - 2010-12-09 19:36:11 Z
+    - 2010-12-09 19:36:11 Z
+  - - 8
+    - asdasdsadas
+    - asda
+    - example@example.com
+    - Male
+    - 1997-12-09
+    - false
+    - false
+    - 3
+    - false
+    - 2010-12-09 19:37:17 Z
+    - 2010-12-09 19:38:20 Z
+
+---
+teams:
+  columns:
+  - id
+  - name
+  - category_id
+  - players_count
+  - created_at
+  - updated_at
+  records:
+  - - 1
+    - Davorless
+    - 1
+    - 3
+    - 2010-12-09 13:21:32 Z
+    - 2010-12-09 13:21:32 Z
+  - - 2
+    - Bears
+    - 2
+    - 0
+    - 2010-12-09 18:59:27 Z
+    - 2010-12-09 18:59:27 Z
+  - - 3
+    - Tango
+    - 3
+    - 4
+    - 2010-12-09 18:59:44 Z
+    - 2010-12-09 18:59:44 Z
+

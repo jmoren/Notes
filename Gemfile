@@ -13,6 +13,8 @@ gem 'on_the_spot'
 #gem 'highlight', :require => 'simplabs/highlight'
 gem 'coderay'
 gem 'RedCloth'
+gem 'thinking-sphinx', '2.0.0', :require => 'thinking_sphinx'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
