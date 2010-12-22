@@ -1,24 +1,21 @@
 Notas::Application.routes.draw do
-  devise_for :users
-
   #match 'notas/search' => "notas#search"
-  match 'pages/topic/:topic' => "pages#topic"
-  match 'pages/category/:category' => "pages#category"
-  match 'pages/tags/:tag' => "pages#tags"
+  #match 'pages/topic/:topic' => "pages#topic"
+  #match 'pages/category/:category' => "pages#category"
+  get '/tags/:tag' => "tags#by_tag", :as => :search_by_tag
 
   resources :notas do
     resources :comments, :only => [:new,:create]
     collection do
-      get :search
       post :update_attribute_on_the_spot
     end
     member do
       post :add_vote
     end
   end
-
+  devise_for :users
   root :to => "notas#index"
-  match '/' => redirect("/notas")
+  #match '/' => redirect("/notas")
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

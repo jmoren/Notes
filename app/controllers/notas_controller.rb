@@ -1,6 +1,5 @@
 class NotasController < ApplicationController
   can_edit_on_the_spot
-  before_filter :set_controller
   before_filter :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
 
   def index
@@ -45,9 +44,6 @@ class NotasController < ApplicationController
     @nota.destroy
     flash[:notice] = "Successfully destroyed nota."
     redirect_to notas_url
-  end
-  def set_controller
-    @notas_controller = true
   end
 
   def add_vote

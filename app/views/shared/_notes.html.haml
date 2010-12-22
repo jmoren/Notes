@@ -1,4 +1,24 @@
-
+#side_panel
+  .wrap#user_information
+    - if current_user
+      %p
+        Logged as:
+        %b
+          = current_user.email
+      %p
+        = link_to "Log Out", destroy_user_session_path
+    - else
+      = link_to "LogIn", new_user_session_path
+  .wrap#links_notes
+    %p= link_to "New Note", new_nota_path
+    %br
+    %p= link_to "All Notes", root_url
+  .wrap#tag_cloud
+    TAGS:
+    - Nota.tag_counts_on(:tags).each do |tag|
+      %p
+        = link_to tag, search_by_tag_path(tag.name)
+        == (#{Nota.tagged_with(tag).size})
 - unless @notas.empty?
   - for nota in @notas
     .note
@@ -15,7 +35,7 @@
           - unless nota.tags.empty?
             - nota.tags.each do |tag|
               %span.tag
-                = link_to tag,:controller => "pages", :action => "tags", :tag => tag.name
+                = link_to tag,search_by_tag_path(tag.name)
           - else
             untagged
   .clear

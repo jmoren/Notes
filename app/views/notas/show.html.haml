@@ -15,7 +15,7 @@
         Tags:
         - @nota.tags.each do |tag|
           %span.tag
-            = link_to tag,:controller => "pages", :action => "tags", :tag => tag.name
+            = link_to tag,search_by_tag_path(tag.name)
   #nota_panel.right.wrap
     .content
       %span#votes
@@ -27,7 +27,7 @@
         = render 'shared/comments_count'
    
     %span#link_index.right
-      = link_to "Back to Index", :back
+      = link_to "Back to Index", root_url
 
 .clearfix
 %script

@@ -20,20 +20,6 @@
             %small shared notes
     .clear
     #container
-      #side_panel
-        #new_note
-          = link_to "Nueva Nota", new_nota_path
-        #tag_cloud
-          - Nota.tag_counts_on(:tags).collect(&:name).each do |tag|
-            %p
-              = link_to tag,:controller => "pages", :action => "tags", :tag => tag
-              == (#{Nota.tagged_with(tag).size})
-        #user_information
-          %p
-            Logged as
-          %p
-            Salir
-
       #content
         = yield
         

@@ -30,27 +30,26 @@ body {
 #container #side_panel {
   padding: 15px;
   float: left;
-  width: 150px; }
-  #container #side_panel #new_note a {
-    font-size: 25px;
-    background: #222222;
-    color: whiteSmoke;
-    padding: 8px;
-    text-decoration: none;
-    border-radius: 10px; }
-    #container #side_panel #new_note a:hover {
-      color: #222222;
-      background: white;
-      border-radius: 8px;
-      border: 2px solid #222222; }
-  #container #side_panel #tag_cloud {
+  width: 15%; }
+  #container #side_panel .wrap {
     background: #cecece;
     color: #222222;
     border-radius: 15px;
-    margin-top: 25px;
+    margin: 10px;
     padding: 20px; }
-    #container #side_panel #tag_cloud a {
-      color: #222222; }
+  #container #side_panel #links_notes a {
+    text-align: center;
+    color: whiteSmoke;
+    text-decoration: none;
+    font-weight: bold;
+    background: #222222;
+    padding: 10px;
+    margin: 15px 10px;
+    border-radius: 5px; }
+  #container #side_panel #tag_cloud a {
+    color: #222222;
+    text-decoration: none;
+    font-weight: bold; }
 #container #content .note {
   background: #f2f2bf;
   display: inline;
