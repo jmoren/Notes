@@ -5,5 +5,4 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
-    categories = Category.create([{:name => "Testing"},{:name => "Develop"},{:name => "System"},{:name => "Qc"},{:name => "Off Topic"}])
-    topics = Topic.create([{:name => "Rails"},{:name => "Ruby"},{:name => "Linux"},{:name => "Mysql"},{:name => "Selenium"},{:name => "Rspec"},{:name => "Cucumber"}])
+topics = Topic.create([{:name => "Rails"},{:name => "Ruby"},{:name => "Linux"},{:name => "Mysql"},{:name => "Selenium"},{:name => "Rspec"},{:name => "Cucumber"}])

@@ -7,8 +7,12 @@
           = current_user.email
       %p
         = link_to "Log Out", destroy_user_session_path
+      %p
+        My Notes:
+        = current_user.notas.size
     - else
       = link_to "LogIn", new_user_session_path
+    
   .wrap#links_notes
     %p= link_to "New Note", new_nota_path
     %br
@@ -23,16 +27,20 @@
   - for nota in @notas
     .note
       %span
-        .title
+        %p.title
           %span.date
-            == created #{distance_of_time_in_words(nota.created_at, Time.now)} by me
+            == #{distance_of_time_in_words(nota.created_at, Time.now)} ago |
+            %br
+            == created by #{nota.user.email}
           %br
           %span.info
             = link_to nota.title.capitalize, nota_path(nota)
-        .body
+
+        %p.body
           = truncate(word_wrap(nota.body,:line_width => 30), :length => 120).html_safe
-        .tags
+        %p.tags
           - unless nota.tags.empty?
+            Tags:
             - nota.tags.each do |tag|
               %span.tag
                 = link_to tag,search_by_tag_path(tag.name)

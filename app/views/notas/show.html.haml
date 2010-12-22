@@ -3,19 +3,28 @@
 #nota_container
   #nota_show.left.wrap
     .content
-      %span#header_note.right
-        = "#{@nota.category.nil? ? "Uncategorized" : @nota.category.name} :: #{@nota.topic.nil? ? "Off Topic" : @nota.topic.name}"
-      .clearfix
+      %span.right
+        = distance_of_time_in_words(@nota.created_at, Time.now)
+        ago | Created by
+        - if current_user
+          = @nota.user.email == current_user.email ? "me" : @nota.user.email
+        - else
+          = @nota.user.email
+      %br
       %span#title_note
-        = on_the_spot_edit @nota, :title, :tooltip => "click to edit"
+        %u
+          -if @nota.user == current_user
+            = on_the_spot_edit @nota, :title
+          - else
+            = @nota.title
       #body_note
         ~ textilize @nota.body
-    - unless @nota.tags.empty?
-      #tags
-        Tags:
-        - @nota.tags.each do |tag|
-          %span.tag
-            = link_to tag,search_by_tag_path(tag.name)
+      - unless @nota.tags.empty?
+        #tags
+          Tags:
+          - @nota.tags.each do |tag|
+            %span.tag
+              = link_to tag,search_by_tag_path(tag.name)
   #nota_panel.right.wrap
     .content
       %span#votes

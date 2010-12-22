@@ -17,6 +17,7 @@ class NotasController < ApplicationController
 
   def create
     @nota = Nota.new(params[:nota])
+    @nota.user = current_user
     if @nota.save
       flash[:notice] = "Successfully created nota."
       redirect_to @nota
@@ -48,8 +49,8 @@ class NotasController < ApplicationController
 
   def add_vote
     @nota = Nota.find(params[:id])
-    vote = @nota.vote + 1
-    @nota.update_attributes(:vote => vote)
+    current_user.votes << Vote.new(:nota_id => @nota.id)
+    @nota.votes.reload
   end
 
 end

@@ -36,11 +36,14 @@ body
     float: left
     width: 15%
     .wrap
+      -webkit-box-shadow: -2px 7px 17px #000222
+      -moz-box-shadow: -2px 7px 17px #000222
+      box-shadow: -2px 7px 17px #000222
       background: #cecece
       color: #222
-      border-radius: 15px
-      margin: 10px
-      padding: 20px
+      border-radius: 5px
+      margin-bottom: 20px
+      padding: 15px
     #links_notes
       a
         text-align: center
@@ -66,7 +69,7 @@ body
       float: left
       padding: 15px
       margin: 15px
-      width: 200px
+      width: 220px
       height: 200px
       border: solid 1px #222
       border-radius: 5px
@@ -80,6 +83,7 @@ body
         .date
           float: right
           font-size: 10px
+          text-align: right
       .body
         height: 100px
         padding: 5px
@@ -165,20 +169,23 @@ body
 
 #nota_container
   min-height: 300px
-  margin: 20px 0
-  .content
-    min-height: 260px
-    font:
-      size: 1em
   #nota_show
     min-height: 300px
     width: 70%
+    .content
+      min-height: 300px
+      border: 1px solid #cecece
+      border-radius: 7px
+      padding: 15px
+      font:
+        size: 1em
     #header_note
       font-size: 1em
     #title_note
       font-size: 2em
       font-weight: bold
     #body_note
+      min-height: 180px
       font-size: 2em
     #tags
       font-size: 13px
@@ -195,9 +202,14 @@ body
           color: #fff
           text-decoration: none
   #nota_panel
-    min-height: 300px
-    width: 20%
+    width: 25%
     color: #222
+    border: 1px solid #cecece
+    border-radius: 7px
+    padding: 15px
+    min-height: 300px
+    .content
+      min-height: 250px
     .value
       font-size: 2em
       font-weight: bold
@@ -218,7 +230,6 @@ body
           color: #222
     #link_index
       a
-        margin: 10px
         padding: 5px
         text-decoration: none
         border: 1px solid #222
