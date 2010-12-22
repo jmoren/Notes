@@ -5,4 +5,3 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
-topics = Topic.create([{:name => "Rails"},{:name => "Ruby"},{:name => "Linux"},{:name => "Mysql"},{:name => "Selenium"},{:name => "Rspec"},{:name => "Cucumber"}])
