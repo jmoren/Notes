@@ -1,7 +1,7 @@
 - title "N & T - #{@nota.title}"
 
 #nota_container
-  #nota_show.left.wrap
+  #nota_show.left
     .content
       %span.right
         = distance_of_time_in_words(@nota.created_at, Time.now)
@@ -25,7 +25,23 @@
           - @nota.tags.each do |tag|
             %span.tag
               = link_to tag,search_by_tag_path(tag.name)
-  #nota_panel.right.wrap
+    #comments_note
+      #add_comment
+        %script
+          function newComment(){
+          $('#comment_form').slideToggle();
+          $('#add_comment').slideToggle();
+          };
+        %p
+          - if current_user
+            %span
+              = link_to_function "Add new Comment","newComment()"
+      #comment_form{:style => "display:none;"}
+        = render 'comments/form'
+      .list_comments
+        = render :partial => 'shared/comments', :nota => @nota
+    
+  #nota_panel.right
     .content
       %span#votes
         = render :partial => "shared/votes"
@@ -38,24 +54,5 @@
     %span#link_index.right
       = link_to "Back to Index", root_url
 
-.clearfix
-%script
-  function newComment(){
-  $('#comment_form').fadeToggle();
-  $('#add_comment').fadeToggle();
-  };
-%br
-#list_comments.wrap
-  = render :partial => 'shared/comments', :nota => @nota
-%br
-#comment_form{:style => "display:none;color: #fff;"}
-  .wrap
-    .left
-      = render 'comments/form'
-    .right{:style => "color: #000"}
-      Datos del usuario!
-    .clearfix
-%br
-#add_comment
-  %span.wrap
-    = link_to_function "Add Comment","newComment()"
+
+

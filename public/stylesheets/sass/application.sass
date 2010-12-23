@@ -32,7 +32,8 @@ body
       font-weight: bold
       :text-align center
   #side_panel
-    padding: 15px
+    padding: 5px
+    margin-left: 25px
     float: left
     width: 15%
     .wrap
@@ -63,6 +64,10 @@ body
     #user_information
 
   #content
+    padding: 5px
+    float: right
+    width: 80%
+    margin: auto
     .note
       background: #F2F2BF
       display: inline
@@ -112,7 +117,7 @@ body
   border: solid 5px #cecece
   padding: 10px
   border-radius: 5px
-  input[type=text],select,input[type=submit]
+  input[type=text],select,input[type=submit],textarea
     border: 1px solid #cecece
     border-radius: 5px
     -moz-border-radius: 5px
@@ -168,10 +173,10 @@ body
           text-decoration: none
 
 #nota_container
-  min-height: 300px
   #nota_show
-    min-height: 300px
     width: 70%
+    margin-left: 30px
+    min-height: 300px
     .content
       min-height: 300px
       border: 1px solid #cecece
@@ -202,7 +207,10 @@ body
           color: #fff
           text-decoration: none
   #nota_panel
-    width: 25%
+    margin-right: 40px
+    padding: 15px
+    float: right
+    width: 18%
     color: #222
     border: 1px solid #cecece
     border-radius: 7px
@@ -316,15 +324,26 @@ body
     border-radius: 8px
   input[type=submit]
     background: green
-
+#comments_note
+  margin: 5px
+  padding: 5px
+  background: #CBDAF5
+  border: solid 1px #cecece
+  border-radius: 3px
 #comment_form
+  margin-top: 15px
   input,textarea
-    border-radius: 8px
+    border-radius: 3px
 
-#list_comments
+.list_comments
+  margin: 5px
+  padding: 5px
   .comment
-    width: 70%
-    border: solid 1px
-    padding: 10px
     margin: 10px 0
-    border-radius: 5px
+    .info
+      font-size: 12px
+      padding: 5px
+    .body
+      background: #DAE9F5
+      padding: 10px
+      border: 1px solid #222

@@ -11,7 +11,7 @@ class Nota < ActiveRecord::Base
   validates_length_of :title, :within => 3..20
 
   def self.pagination(page)
-    all(:order => "created_at DESC").paginate(:page => page, :per_page => 8)
+    all(:order => "created_at DESC").paginate(:page => page, :per_page => 6)
   end
   def was_voted_by(user)
     self.votantes.where(:id => user.id).count < 1

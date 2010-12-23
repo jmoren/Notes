@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
   
   def create
     @comment = Comment.new(params[:comment])
+    @comment.user = current_user
     @nota = @comment.nota
     if @comment.save
       flash[:notice] = "Successfully created comment."

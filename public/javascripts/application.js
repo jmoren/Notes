@@ -4,6 +4,7 @@
 $(document).ready(function(){
     
     $('.info').tipsy({gravity: 's'});
+    $('.info2').tipsy({gravity: 'w'});
     $(".trigger").click(function(){
       $("#panel").toggle("fast");
       $(this).toggleClass("active");
