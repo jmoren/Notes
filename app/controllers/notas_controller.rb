@@ -2,18 +2,20 @@ class NotasController < ApplicationController
   can_edit_on_the_spot
   before_filter :set_controller
   def index
-    @notas = Nota.pagination(params[:page])
+    debugger
+    @notas = Nota.search(params[:search])
+    #Nota.pagination(params[:page])
   end
-  
+
   def show
     @nota = Nota.find(params[:id])
     @nota.add_view unless @nota.new_record?
   end
-  
+
   def new
     @nota = Nota.new
   end
-  
+
   def create
     @nota = Nota.new(params[:nota])
     if @nota.save
@@ -23,11 +25,11 @@ class NotasController < ApplicationController
       render 'new'
     end
   end
-  
+
   def edit
     @nota = Nota.find(params[:id])
   end
-  
+
   def update
     @nota = Nota.find(params[:id])
     if @nota.update_attributes(params[:nota])
@@ -37,7 +39,7 @@ class NotasController < ApplicationController
       render :action => 'edit'
     end
   end
-  
+
   def destroy
     @nota = Nota.find(params[:id])
     @nota.destroy
@@ -53,5 +55,6 @@ class NotasController < ApplicationController
     vote = @nota.vote + 1
     @nota.update_attributes(:vote => vote)
   end
-   
+
 end
+

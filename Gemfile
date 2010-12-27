@@ -13,7 +13,7 @@ gem 'on_the_spot'
 #gem 'highlight', :require => 'simplabs/highlight'
 gem 'coderay'
 gem 'RedCloth'
-gem 'thinking-sphinx', '2.0.0', :require => 'thinking_sphinx'
+gem 'thinking-sphinx', '2.0.1', :require => 'thinking_sphinx'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -41,5 +41,9 @@ gem "mocha", :group => :test
 group :development, :test do
    gem 'webrat'
    gem 'yaml_db'
+   gem 'wirble'
+   gem 'hirb'
+   gem 'awesome_print'
+   gem 'ruby-debug19', :require => 'ruby-debug'
 end
 
