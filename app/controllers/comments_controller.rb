@@ -1,19 +1,20 @@
 class CommentsController < ApplicationController
+  before_filter :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
+
   def index
     @comments = Comment.all
   end
-  
+
   def show
     @comment = Comment.find(params[:id])
   end
-  
+
   def new
     @comment = Comment.new
   end
-  
+
   def create
-    @comment = Comment.new(params[:comment])
-    @comment.user = current_user
+    @comment = current_user.comments.build(params[:comment])
     @nota = @comment.nota
     if @comment.save
       flash[:notice] = "Successfully created comment."
@@ -24,11 +25,11 @@ class CommentsController < ApplicationController
       render :action => 'new'
     end
   end
-  
+
   def edit
     @comment = Comment.find(params[:id])
   end
-  
+
   def update
     @comment = Comment.find(params[:id])
     if @comment.update_attributes(params[:comment])
@@ -38,7 +39,7 @@ class CommentsController < ApplicationController
       render :action => 'edit'
     end
   end
-  
+
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
@@ -46,3 +47,4 @@ class CommentsController < ApplicationController
     redirect_to comments_url
   end
 end
+

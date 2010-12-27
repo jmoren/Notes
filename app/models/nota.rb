@@ -1,13 +1,29 @@
+# == Schema Info
+#
+# Table name: notas
+#
+#  id          :integer(4)      not null, primary key
+#  category_id :integer(4)
+#  topic_id    :integer(4)
+#  user_id     :integer(4)
+#  body        :text
+#  title       :string(255)
+#  views       :integer(4)      default(0)
+#  vote        :integer(4)      default(0)
+#  created_at  :datetime
+#  updated_at  :datetime
+
 class Nota < ActiveRecord::Base
   belongs_to :user
   has_many :votes
   has_many :votantes, :through => :votes, :source => :user
   has_many :comments, :dependent => :destroy
+  belongs_to :user
+
   acts_as_taggable
 
-  attr_accessible :title, :body, :views, :tag_list,:user_id
-  
-  validates :title, :body, :presence => true
+  validates :title, :body, :user_id, :presence => true
+
   validates_length_of :title, :within => 3..20
 
   def self.pagination(page)
@@ -20,5 +36,6 @@ class Nota < ActiveRecord::Base
     views = self.views + 1
     self.update_attributes(:views => views)
   end
-  
+
 end
+
