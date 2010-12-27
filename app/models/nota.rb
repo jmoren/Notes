@@ -20,6 +20,17 @@ class Nota < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
   belongs_to :user
 
+  #sphinx indexes
+  define_index do
+    indexes title
+    indexes body
+    #indexes :name, :sortable => true
+    indexes comments.comment, :as => :comment_content
+    #indexes [author.first_name, author.last_name], :as => :author_name
+
+    has created_at
+  end
+
   acts_as_taggable
 
   validates :title, :body, :user_id, :presence => true

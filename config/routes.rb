@@ -1,5 +1,5 @@
 Notas::Application.routes.draw do
-  #match 'notas/search' => "notas#search"
+  match '/notas/search' => "notas#search"
   #match 'pages/topic/:topic' => "pages#topic"
   #match 'pages/category/:category' => "pages#category"
   get '/tags/:tag' => "tags#by_tag", :as => :search_by_tag

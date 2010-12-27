@@ -2,9 +2,15 @@ class NotasController < ApplicationController
   can_edit_on_the_spot
   before_filter :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
 
+
   def index
     @notas = Nota.pagination(params[:page])
   end
+
+  def search
+    @notas = Nota.search(params[:search], :include => "comments")
+  end
+
 
   def show
     @nota = Nota.find(params[:id])

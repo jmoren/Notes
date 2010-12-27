@@ -18,9 +18,14 @@
         #subtitle
           %span
             %small shared notes
+        #search_form
+          = form_tag("/notas/search", :method => :get) do
+            %p
+              = search_field_tag("search")
+              = submit_tag 'Search'
     .clear
     #container
-      
+
       #side_panel
         .wrap#user_information
           - if current_user
