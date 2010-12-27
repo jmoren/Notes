@@ -12,30 +12,21 @@
 
 ActiveRecord::Schema.define(:version => 20101222193805) do
 
-  create_table "categories", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "comments", :force => true do |t|
     t.integer  "nota_id"
+    t.integer  "user_id"
     t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
   end
 
   create_table "notas", :force => true do |t|
     t.string   "title"
     t.text     "body"
-    t.integer  "topic_id"
-    t.integer  "category_id"
-    t.integer  "vote",        :default => 0
-    t.integer  "views",       :default => 0
+    t.integer  "user_id"
+    t.integer  "views",      :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
   end
 
   create_table "taggings", :force => true do |t|
@@ -53,12 +44,6 @@ ActiveRecord::Schema.define(:version => 20101222193805) do
 
   create_table "tags", :force => true do |t|
     t.string "name"
-  end
-
-  create_table "topics", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
