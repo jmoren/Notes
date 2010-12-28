@@ -1,3 +1,4 @@
 %p
   %span.value
-    == #{@nota.comments.size} #{@nota.comments.size == 1 ? 'comment' : 'comments'}
+    = pluralize(@nota.comments.size, 'comment')
+

@@ -47,7 +47,7 @@
         = render :partial => "shared/votes"
       %p
         %span.value
-          == #{@nota.views} #{@nota.views == 1 ? 'view' : 'views'}
+          = pluralize(@nota.views, 'view')
       #comment_count
         = render 'shared/comments_count'
 
