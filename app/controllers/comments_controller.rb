@@ -16,13 +16,16 @@ class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.build(params[:comment])
     @nota = @comment.nota
-    if @comment.save
-      flash[:notice] = "Successfully created comment."
-      respond_to do |format|
+    respond_to do |format|
+      if @comment.save
+        flash[:notice] = "Successfully created comment."
         format.js
+      else
+        format.html {render :action => 'new'}
+
+        #TODO we should show error messages
+        format.js {render ''}
       end
-    else
-      render :action => 'new'
     end
   end
 

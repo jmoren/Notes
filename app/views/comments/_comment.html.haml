@@ -1,0 +1,9 @@
+.comment
+  .info.right
+    %span= distance_of_time_in_words(comment.created_at, Time.now)
+    ago
+    |
+    %span== created by #{comment.user.email}
+  .body
+    = textilize comment.comment
+

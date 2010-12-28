@@ -39,8 +39,8 @@
       #comment_form{:style => "display:none;"}
         = render 'comments/form'
       .list_comments
-        = render :partial => 'shared/comments', :nota => @nota
-    
+        = render :partial => @nota.comments
+
   #nota_panel.right
     .content
       %span#votes
@@ -50,9 +50,7 @@
           == #{@nota.views} #{@nota.views == 1 ? 'view' : 'views'}
       #comment_count
         = render 'shared/comments_count'
-   
+
     %span#link_index.right
       = link_to "Back to Index", root_url
-
-
 
