@@ -43,10 +43,9 @@
           %p= link_to "All Notes", root_url
         .wrap#tag_cloud
           TAGS:
-          - Nota.tag_counts_on(:tags).each do |tag|
-            %p
-              = link_to tag, search_by_tag_path(tag.name)
-              == (#{Nota.tagged_with(tag).size})
+          - tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class|
+            = link_to tag.name, search_by_tag_path(tag.name), :class => css_class
+
       #content
         = yield
 
