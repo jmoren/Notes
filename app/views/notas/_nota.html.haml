@@ -1,0 +1,31 @@
+.note
+  %span
+    %p.title
+      %span.date
+        == #{distance_of_time_in_words(nota.created_at, Time.now)} ago |
+        %br
+        == created by #{nota.user.email}
+      %br
+      %span{:class => "info", :title => "#{nota.votes.size} votes, #{nota.comments.size} comments"}
+        = link_to nota.title.capitalize, nota_path(nota)
+
+    %p.body
+      ~ truncate(word_wrap(nota.body,:line_width => 30), :length => 120).html_safe
+    %p.tags
+      - unless nota.tags.empty?
+        Tags:
+        - nota.tags.each do |tag|
+          %span.tag
+            = link_to tag,search_by_tag_path(tag.name)
+      - else
+        untagged
+.clear
+
+%script
+  //$(function() {
+  //$( "#sortable" ).sortable({placeholder: "ui-state-highlight"});
+  //$( "#sortable" ).disableSelection();
+  //});
+  //$('.info').tipsy({gravity: 'e'});
+  //$('.flash').dialog({ autoOpen: true, height: 100});
+

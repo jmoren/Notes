@@ -1,4 +1,8 @@
 - title "Tips & Notes"
 
 #index
-  = render :partial => 'shared/notes'
+  = render :partial => @notas_found
+#in_comments
+  %h1 Found in comments
+  = render :partial => @comments_found
+

@@ -28,6 +28,10 @@ class Nota < ActiveRecord::Base
     indexes comments.comment, :as => :comment_content
     #indexes [author.first_name, author.last_name], :as => :author_name
 
+    set_property :field_weights  => { 'title'               => 50,
+                                      'body'                => 30,
+                                      'comment_content'     => 1 }
+
     has created_at
   end
 

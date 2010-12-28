@@ -18,12 +18,10 @@
         #subtitle
           %span
             %small shared notes
-        #search_form
-          = form_tag("/notas/search", :method => :get) do
-            %p
-              = search_field_tag("search")
-              = submit_tag 'Search'
-    .clear
+      #search_form
+        = form_tag("/notas/search", :method => :get) do
+          = search_field_tag("search")
+          = submit_tag 'Search'
     #container
 
       #side_panel
