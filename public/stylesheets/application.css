@@ -22,6 +22,7 @@ body {
       text-align: right;
       font-size: 15px; }
   #header a, #header a:visited {
+    text-decoration: none;
     color: white;
   }
 
@@ -42,6 +43,7 @@ body {
     box-shadow: -2px 7px 17px #000222;
     background: #cecece;
     color: #222222;
+    -moz-border-radius: 5px;
     border-radius: 5px;
     margin-bottom: 20px;
     padding: 15px; }
@@ -53,6 +55,7 @@ body {
     background: #222222;
     padding: 10px;
     margin: 15px 10px;
+    -moz-border-radius: 5px;
     border-radius: 5px; }
   #container #side_panel #tag_cloud a {
     color: #222222;
@@ -72,6 +75,7 @@ body {
     width: 220px;
     height: 200px;
     border: solid 1px #222222;
+    -moz-border-radius: 5px;
     border-radius: 5px;
     -webkit-box-shadow: -2px 7px 17px #000222;
     -moz-box-shadow: -2px 7px 17px #000222;
@@ -110,6 +114,7 @@ body {
   margin: 20px 0;
   border: solid 5px #cecece;
   padding: 10px;
+  -moz-border-radius: 5px;
   border-radius: 5px; }
   #nota_form input[type=text], #nota_form select, #nota_form input[type=submit], #nota_form textarea {
     border: 1px solid #cecece;
@@ -169,6 +174,7 @@ body {
   #nota_container #nota_show .content {
     min-height: 300px;
     border: 1px solid #cecece;
+    -moz-border-radius: 7px;
     border-radius: 7px;
     padding: 15px;
     font-size: 1em; }
@@ -201,6 +207,7 @@ body {
   width: 18%;
   color: #222222;
   border: 1px solid #cecece;
+  -moz-border-radius: 7px;
   border-radius: 7px;
   padding: 15px;
   min-height: 300px; }
@@ -306,10 +313,12 @@ body {
 
 .on_the_spot_editing {
   width: 100%;
+  -moz-border-radius: 5px;
   border-radius: 5px; }
   .on_the_spot_editing input {
     display: block;
     font-size: 20px;
+    -moz-border-radius: 8px;
     border-radius: 8px; }
   .on_the_spot_editing input[type=submit] {
     background: green; }
@@ -319,11 +328,13 @@ body {
   padding: 5px;
   background: #cbdaf5;
   border: solid 1px #cecece;
+  -moz-border-radius: 3px;
   border-radius: 3px; }
 
 #comment_form {
   margin-top: 15px; }
   #comment_form input, #comment_form textarea {
+    -moz-border-radius: 3px;
     border-radius: 3px; }
 
 .list_comments {
