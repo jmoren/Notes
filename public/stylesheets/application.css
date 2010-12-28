@@ -17,9 +17,13 @@ body {
     float: left;
     font-size: 40px;
     font-weight: bold; }
+
     #header #title #subtitle {
       text-align: right;
       font-size: 15px; }
+  #header a, #header a:visited {
+    color: white;
+  }
 
 #container #flash_messages .flash {
   border-radius: 6px;
@@ -334,3 +338,4 @@ body {
       background: #dae9f5;
       padding: 10px;
       border: 1px solid #222222; }
+

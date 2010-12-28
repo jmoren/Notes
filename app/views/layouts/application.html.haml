@@ -12,15 +12,15 @@
 
   %body
     #header
-      #title
-        - if show_title?
-          = yield(:title) || "Tips & Notes"
-        #subtitle
-          %span
-            %small shared notes
+      = link_to root_path do
+        #title
+          - if show_title?
+            = yield(:title) || "Tips & Notes"
+          #subtitle
+            %span
+              %small shared notes
     .clear
     #container
-      
       #side_panel
         .wrap#user_information
           - if current_user
