@@ -28,6 +28,9 @@ class User < ActiveRecord::Base
          :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  acts_as_authorization_subject  :association_name => :roles
+
+
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   has_many :notas

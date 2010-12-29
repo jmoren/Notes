@@ -20,6 +20,9 @@ gem 'RedCloth'
 # Use unicorn as the web server
 # gem 'unicorn'
 
+#Roles
+gem 'acl9'
+
 # Deploy with Capistrano
 # gem 'capistrano'
 
