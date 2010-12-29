@@ -4,5 +4,5 @@
   = render :partial => @notas_found
 #in_comments
   %h1 Found in comments
-  = render :partial => @comments_found
+  = render :partial => "tiny_nota" , :collection => @comments_found, :as => :nota
 

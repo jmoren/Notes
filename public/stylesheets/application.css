@@ -235,6 +235,17 @@ body {
     -webkit-border-radius: 4px;
     background-color: #222222;
     color: #cccccc; }
+.tinynota{
+    padding: 5px;
+    font-size: 12px;
+    border: 1px solid #222222;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    background-color: #F2F2BF;
+    color: #cccccc;
+    ;width: 18% }
+
 
 .left {
   float: left; }

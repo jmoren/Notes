@@ -6,6 +6,9 @@ Notas::Application.routes.draw do
 
   resources :notas do
     resources :comments, :only => [:new,:create]
+    resources :comments do
+         get 'comments_by_note', :on => :collection
+    end
     collection do
       post :update_attribute_on_the_spot
     end

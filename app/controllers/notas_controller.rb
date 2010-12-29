@@ -14,7 +14,7 @@ class NotasController < ApplicationController
     @notas = Nota.search(params[:search], :include => "comments")
     @notas_found = []
     @comments_found = []
-    @notas.each_with_weighting{|x,y| y > 10 ? @notas_found << x : @comments_found << x }
+    @notas.each_with_weighting{|data,weight| weight > 10 ? @notas_found << data : @comments_found << data }
 
   end
 

@@ -1,0 +1,29 @@
+.tinynota
+  %span
+    %p.title
+      %span{:class => "info", :title => "#{nota.votes.size} votes, #{nota.comments.size} comments"}
+        = link_to nota.title.capitalize, nota_path(nota)
+      %br
+      %span.date
+        == #{distance_of_time_in_words(nota.created_at, Time.now)} ago |
+        %br
+      %p.tags
+      - unless nota.tags.empty?
+        Tags:
+        - nota.tags.each do |tag|
+          %span.tag
+            = link_to tag,search_by_tag_path(tag.name)
+      - else
+        untagged
+  #show_comment_link
+    = link_to "View Comments", comments_by_note_nota_comments_path(nota)
+.clear
+
+%script
+  //$(function() {
+  //$( "#sortable" ).sortable({placeholder: "ui-state-highlight"});
+  //$( "#sortable" ).disableSelection();
+  //});
+  //$('.info').tipsy({gravity: 'e'});
+  //$('.flash').dialog({ autoOpen: true, height: 100});
+
