@@ -356,3 +356,9 @@ body {
       padding: 10px;
       border: 1px solid #222222; }
 
+label.error {
+  color: red;
+  font-style: italic;
+  display: block !important;
+}
+

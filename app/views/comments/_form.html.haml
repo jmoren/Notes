@@ -1,6 +1,12 @@
 = form_for([@nota,Comment.new], :remote => true) do |f|
   = f.hidden_field :nota_id, :value => @nota.id
-  = f.text_area :comment, :cols => 80, :rows => 5
+  = f.text_area :comment, :cols => 80, :rows => 5, :class => "required", :minlength => "3"
   %p
     = f.submit
     == or #{link_to_function "Cancel","newComment()"}
+
+:javascript
+  $(document).ready(function(){
+  $("#new_comment").validate();
+  });
+
