@@ -9,6 +9,11 @@
   </head>
   <body>
     <div id="container">
+      <div id="menu">
+        <%= link_to 'users', admin_users_path %>
+        |
+        <%= link_to 'comments', admin_comments_path %>
+      </div>
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>
@@ -17,3 +22,4 @@
     </div>
   </body>
 </html>
+

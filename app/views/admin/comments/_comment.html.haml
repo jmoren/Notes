@@ -1,0 +1,6 @@
+%tr
+  %td= comment.comment
+  %td= link_to 'Show', [:admin, comment]
+  %td= link_to 'Edit', edit_admin_comment_path(comment)
+  %td= link_to 'Destroy', [:admin,  comment], :confirm => 'Are you sure?', :method => :delete
+
