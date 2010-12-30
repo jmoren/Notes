@@ -2,6 +2,14 @@ Notas::Application.routes.draw do
   #match 'notas/search' => "notas#search"
   #match 'pages/topic/:topic' => "pages#topic"
   #match 'pages/category/:category' => "pages#category"
+
+  match '/admin' => "admin#index"
+  namespace :admin do
+    resources :notas
+    resources :users
+    resources :comments
+  end
+
   get '/tags/:tag' => "tags#by_tag", :as => :search_by_tag
 
   resources :notas do
