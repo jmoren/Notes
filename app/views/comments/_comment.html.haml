@@ -1,9 +1,12 @@
 .comment
-  .info.right
+  .author.right
     %span= distance_of_time_in_words(comment.created_at, Time.now)
     ago
     |
     %span== created by #{comment.user.email}
   .body
-    = textilize comment.comment
-
+    %p
+      - if current_user == comment.nota.user
+        = on_the_spot_edit comment,:comment, :type => :textarea, :rows => 6, :columns => 82
+      - else
+        = comment.comment

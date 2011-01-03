@@ -9,22 +9,19 @@ body {
 
 #header {
   background-color: #222222;
-  color: whiteSmoke;
   margin-bottom: 20px;
   padding: 20px 60px;
   overflow: hidden; }
+  #header a {
+    color: whiteSmoke;
+    text-decoration: none; }
   #header #title {
     float: left;
     font-size: 40px;
     font-weight: bold; }
-
     #header #title #subtitle {
       text-align: right;
       font-size: 15px; }
-  #header a, #header a:visited {
-    text-decoration: none;
-    color: white;
-  }
 
 #container #flash_messages .flash {
   border-radius: 6px;
@@ -43,7 +40,6 @@ body {
     box-shadow: -2px 7px 17px #000222;
     background: #cecece;
     color: #222222;
-    -moz-border-radius: 5px;
     border-radius: 5px;
     margin-bottom: 20px;
     padding: 15px; }
@@ -55,18 +51,11 @@ body {
     background: #222222;
     padding: 10px;
     margin: 15px 10px;
-    -moz-border-radius: 5px;
     border-radius: 5px; }
   #container #side_panel #tag_cloud a {
     color: #222222;
     text-decoration: none;
     font-weight: bold; }
-
-.css1 { font-size: 1.0em; }
-.css2 { font-size: 1.2em; }
-.css3 { font-size: 1.4em; }
-.css4 { font-size: 1.6em; }
-
 #container #content {
   padding: 5px;
   float: right;
@@ -81,7 +70,6 @@ body {
     width: 220px;
     height: 200px;
     border: solid 1px #222222;
-    -moz-border-radius: 5px;
     border-radius: 5px;
     -webkit-box-shadow: -2px 7px 17px #000222;
     -moz-box-shadow: -2px 7px 17px #000222;
@@ -120,7 +108,6 @@ body {
   margin: 20px 0;
   border: solid 5px #cecece;
   padding: 10px;
-  -moz-border-radius: 5px;
   border-radius: 5px; }
   #nota_form input[type=text], #nota_form select, #nota_form input[type=submit], #nota_form textarea {
     border: 1px solid #cecece;
@@ -180,7 +167,6 @@ body {
   #nota_container #nota_show .content {
     min-height: 300px;
     border: 1px solid #cecece;
-    -moz-border-radius: 7px;
     border-radius: 7px;
     padding: 15px;
     font-size: 1em; }
@@ -213,7 +199,6 @@ body {
   width: 18%;
   color: #222222;
   border: 1px solid #cecece;
-  -moz-border-radius: 7px;
   border-radius: 7px;
   padding: 15px;
   min-height: 300px; }
@@ -319,12 +304,10 @@ body {
 
 .on_the_spot_editing {
   width: 100%;
-  -moz-border-radius: 5px;
   border-radius: 5px; }
   .on_the_spot_editing input {
     display: block;
     font-size: 20px;
-    -moz-border-radius: 8px;
     border-radius: 8px; }
   .on_the_spot_editing input[type=submit] {
     background: green; }
@@ -334,13 +317,11 @@ body {
   padding: 5px;
   background: #cbdaf5;
   border: solid 1px #cecece;
-  -moz-border-radius: 3px;
   border-radius: 3px; }
 
 #comment_form {
   margin-top: 15px; }
   #comment_form input, #comment_form textarea {
-    -moz-border-radius: 3px;
     border-radius: 3px; }
 
 .list_comments {
@@ -348,17 +329,10 @@ body {
   padding: 5px; }
   .list_comments .comment {
     margin: 10px 0; }
-    .list_comments .comment .info {
+    .list_comments .comment .author {
       font-size: 12px;
       padding: 5px; }
     .list_comments .comment .body {
       background: #dae9f5;
       padding: 10px;
       border: 1px solid #222222; }
-
-label.error {
-  color: red;
-  font-style: italic;
-  display: block !important;
-}
-

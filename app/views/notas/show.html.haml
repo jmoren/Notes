@@ -10,6 +10,12 @@
           = @nota.user.email == current_user.email ? "me" : @nota.user.email
         - else
           = @nota.user.email
+        %br
+        %span
+          - if current_user == @nota.user
+            = link_to "Edit", edit_nota_path(@nota)
+            |
+            = link_to "Delete", @nota, :confirm => "Are you sure?", :method => :delete
       %br
       %span#title_note
         %u
