@@ -17,12 +17,14 @@
             |
             = link_to "Delete", @nota, :confirm => "Are you sure?", :method => :delete
       %br
-      %span#title_note
-        %u
-          -if @nota.user == current_user
-            = on_the_spot_edit @nota, :title
-          - else
-            = @nota.title
+      %br
+      %p
+        #title_note
+          %u
+            -if @nota.user == current_user
+              = on_the_spot_edit @nota, :title
+            - else
+              = @nota.title
       #body_note
         ~ textilize @nota.body
       - unless @nota.tags.empty?

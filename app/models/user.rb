@@ -18,13 +18,9 @@
 #  updated_at           :datetime
 
 class User < ActiveRecord::Base
-  has_many :notas
-  has_many :comments
-
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
-  devise :database_authenticatable,
-#         :ldap_authenticatable,
+  devise :ldap_authenticatable,
          :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 

@@ -302,15 +302,10 @@ body {
   color: white;
   text-align: center; }
 
-.on_the_spot_editing {
-  width: 100%;
-  border-radius: 5px; }
-  .on_the_spot_editing input {
-    display: block;
-    font-size: 20px;
-    border-radius: 8px; }
-  .on_the_spot_editing input[type=submit] {
-    background: green; }
+.on_the_spot_editing input {
+  display: block;
+  font-size: 20px;
+  border-radius: 8px; }
 
 #comments_note {
   margin: 5px;

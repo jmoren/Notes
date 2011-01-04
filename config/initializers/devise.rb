@@ -3,13 +3,13 @@
 Devise.setup do |config|
   # ==> LDAP Configuration
   # config.ldap_logger = true
-  # config.ldap_create_user = false
+  config.ldap_create_user = true 
   # config.ldap_update_password = true
   # config.ldap_config = "#{Rails.root}/config/ldap.yml"
   # config.ldap_check_group_membership = false
   # config.ldap_check_attributes = false
-  # config.ldap_use_admin_to_bind = false
-
+  config.ldap_use_admin_to_bind = true
+  config.ldap_auth_username_builder = Proc.new() {|attribute, login, ldap| "#{login}" }
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in DeviseMailer.
   config.mailer_sender = "please-change-me@config-initializers-devise.com"
@@ -58,8 +58,8 @@ Devise.setup do |config|
   config.pepper = "a3060a270ce4ea6ef4f14dfc4874e288b56005119f27c93b8cb9397738dad194ca08308233af6675534be4104fd3730694288e7681c27b2973b78719f57802fb"
 
   #Generate the user based on ldap
-  config.ldap_create_user = true
-  config.ldap_use_admin_to_bind = true
+  # config.ldap_create_user = true
+  # config.ldap_use_admin_to_bind = true
   # ==> Configuration for :confirmable
   # The time you want to give your user to confirm his account. During this time
   # he will be able to access your application without confirming. Default is nil.

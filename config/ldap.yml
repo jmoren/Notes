@@ -23,12 +23,12 @@ authorizations: &AUTHORIZATIONS
 development:
   host: rancine.globant.com
   port: 389
-  attribute: CN
-  base: OU=People,DC=globant,DC=com
-  admin_user: CN=,OU=People,DC=globant,DC=com
-  admin_password:
+  attribute: sAMAccountName
+  base: ou=people,dc=globant,dc=com
+  admin_user: cn=globant_kitchen,dc=globant,dc=com
+  admin_password: MtfdR2345$
   ssl: false
-  #<<: *AUTHORIZATIONS
+  # <<: *AUTHORIZATIONS
 
 test:
   host: localhost
@@ -49,4 +49,3 @@ production:
   admin_password: admin_password
   ssl: true
   # <<: *AUTHORIZATIONS
-
