@@ -2,7 +2,21 @@
 // This file is automatically included by javascript_include_tag :defaults
 
 $(document).ready(function(){
-    
+
+//    $('.show_comments').live('load',function(e){
+    $('a.show_comments').live('click',function(e){
+
+        $(this).parent().next('#comment_index').slideToggle();
+        return false;
+    });
+/*
+    $('.show_comments').click(
+        function (){
+            $('#comment_index').slideToggle();
+            return false;
+    });
+*/
+
     $('.info').tipsy({gravity: 's'});
     $('.info2').tipsy({gravity: 'w'});
     $(".trigger").click(function(){
@@ -10,7 +24,7 @@ $(document).ready(function(){
       $(this).toggleClass("active");
       return false;
     });
-    
+
     /*$("a.fancybox").fancybox({
       zoomSpeedIn: 300,
       zoomSpeedOut: 300,
@@ -46,8 +60,8 @@ $(document).ready(function(){
       });
     });
     countWord();
-    
-   
+
+
 });
 
 function countWord(){
