@@ -1,0 +1,11 @@
+%h2= @nota.title
+%p= "Created at #{@nota.created_at.to_s(:long)}"
+%p= @nota.body
+
+%h4= "Author #{@nota.user.email}"
+
+%h4= "Comments (#{@nota.comments.size})"
+.comments
+
+= link_to 'back', admin_notas_path
+

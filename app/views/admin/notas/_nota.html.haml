@@ -1,0 +1,7 @@
+%tr
+  %td= nota.title
+  %td= nota.user.email
+  %td= link_to 'Show', [:admin, nota]
+  %td= link_to 'Edit', edit_admin_nota_path(nota)
+  %td= link_to 'Destroy', [:admin,  nota], :confirm => 'Are you sure?', :method => :delete
+
