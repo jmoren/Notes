@@ -7,5 +7,7 @@
 %h4= "Comments (#{@nota.comments.size})"
 .comments
 
+= link_to 'edit', edit_admin_nota_path(@nota)
+|
 = link_to 'back', admin_notas_path
 
