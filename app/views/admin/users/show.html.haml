@@ -1,0 +1,9 @@
+%h2= "User #{@user.email}"
+
+%h4= "Notes (#{@user.notas.size})"
+.notes
+%h4= "Comments (#{@user.comments.size})"
+.comments
+
+= link_to 'back', admin_users_path
+

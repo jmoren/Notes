@@ -8,7 +8,7 @@ gem 'nifty-generators'
 gem 'haml'
 gem 'will_paginate', '3.0.pre2'
 gem 'acts-as-taggable-on'
-gem 'ckeditor', '3.4.2.pre'
+gem 'ckeditor', '3.5.0'
 gem 'on_the_spot'
 
 #Authentication
@@ -19,6 +19,9 @@ gem 'coderay'
 gem 'RedCloth'
 # Use unicorn as the web server
 # gem 'unicorn'
+
+#Roles
+gem 'acl9'
 
 # Deploy with Capistrano
 # gem 'capistrano'

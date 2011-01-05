@@ -1,0 +1,7 @@
+%tr
+  %td= comment.user.email
+  %td= link_to comment.nota.title, [:admin, comment.nota]
+  %td= comment.comment
+  %td= link_to 'Edit', edit_admin_comment_path(comment)
+  %td= link_to 'Destroy', [:admin,  comment], :confirm => 'Are you sure?', :method => :delete
+
