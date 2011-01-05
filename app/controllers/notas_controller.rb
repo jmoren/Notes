@@ -9,8 +9,6 @@ class NotasController < ApplicationController
 
   def search
 
-
-
     @notas = Nota.search(params[:search], :include => "comments")
     @notas_found = []
     @comments_found = []
@@ -33,6 +31,7 @@ class NotasController < ApplicationController
     if @nota.save
       flash[:notice] = "Successfully created nota."
       redirect_to @nota
+      refresh_index
     else
       render 'new'
     end
@@ -65,5 +64,10 @@ class NotasController < ApplicationController
     @nota.votes.reload
   end
 
+  private
+
+  def refresh_index
+    call_rake ("ts:reindex")
+  end
 end
 
