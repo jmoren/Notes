@@ -27,6 +27,9 @@
               Welcome:
               %b
                 = current_user.email
+
+            - if current_user.has_role? :admin
+              %p= link_to 'admin', admin_path
             %p
               = link_to "edit your profile", edit_user_registration_path
             %p
