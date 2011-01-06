@@ -1,7 +1,11 @@
 %h2= "User #{@user.email}"
 
+%h4 Roles
+.roles= @user.roles_to_text
+
 %h4= "Notes (#{@user.notas.size})"
 .notes
+
 %h4= "Comments (#{@user.comments.size})"
 .comments
 

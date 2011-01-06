@@ -6,7 +6,7 @@ Notas::Application.routes.draw do
   match '/admin' => "admin#index"
   namespace :admin do
     resources :notas, :except => [:new, :create]
-    resources :users, :except => [:edit, :update, :new, :create]
+    resources :users, :except => [:new, :create]
     resources :comments, :except => [:new, :create]
   end
 
