@@ -18,7 +18,6 @@ class Nota < ActiveRecord::Base
   has_many :votes
   has_many :votantes, :through => :votes, :source => :user
   has_many :comments, :dependent => :destroy
-  belongs_to :user
 
   acts_as_taggable
 
@@ -29,13 +28,14 @@ class Nota < ActiveRecord::Base
   def self.pagination(page)
     all(:order => "created_at DESC").paginate(:page => page, :per_page => 6)
   end
+
   def was_voted_by(user)
     self.votantes.where(:id => user.id).count < 1
   end
-  def add_view
-    views = self.views + 1
-    self.update_attributes(:views => views)
-  end
 
+  def add_view
+    self.views = self.views + 1
+    self.save
+  end
 end
 
