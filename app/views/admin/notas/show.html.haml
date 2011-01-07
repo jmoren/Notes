@@ -9,5 +9,7 @@
 
 = link_to 'edit', edit_admin_nota_path(@nota)
 |
+= link_to 'delete', [:admin,  @nota], :confirm => 'Are you sure?', :method => :delete
+|
 = link_to 'back', admin_notas_path
 
