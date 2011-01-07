@@ -21,10 +21,12 @@ Notas::Application.routes.draw do
     collection do
       post :update_attribute_on_the_spot
     end
+
     member do
       post :add_vote
     end
   end
+
   devise_for :users
   root :to => "notas#index"
   #match '/' => redirect("/notas")
