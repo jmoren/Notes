@@ -1,6 +1,7 @@
 class NotasController < ApplicationController
   can_edit_on_the_spot
   before_filter :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
+  before_filter :find_user_note, :only => [:destroy, :edit, :update]
 
   def index
     @notas = Nota.pagination(params[:page])
@@ -26,11 +27,10 @@ class NotasController < ApplicationController
   end
 
   def edit
-    @nota = Nota.find(params[:id])
+
   end
 
   def update
-    @nota = Nota.find(params[:id])
     if @nota.update_attributes(params[:nota])
       flash[:notice] = "Successfully updated nota."
       redirect_to @nota
@@ -40,17 +40,20 @@ class NotasController < ApplicationController
   end
 
   def destroy
-    @nota = Nota.find(params[:id])
     @nota.destroy
     flash[:notice] = "Successfully destroyed nota."
     redirect_to notas_url
   end
 
   def add_vote
-    @nota = Nota.find(params[:id])
-    current_user.votes << Vote.new(:nota_id => @nota.id)
-    @nota.votes.reload
+    vote = current_user.votes.create(:nota_id => params[:id])
+    @nota = vote.nota
   end
 
+  private
+
+  def find_user_note
+    @nota = current_user.notas.find(params[:id])
+  end
 end
 
