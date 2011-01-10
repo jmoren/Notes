@@ -18,6 +18,8 @@ class Nota < ActiveRecord::Base
 
   acts_as_taggable
 
+
+
   validates :title, :body, :user_id, :presence => true
 
   validates_length_of :title, :within => 3..20

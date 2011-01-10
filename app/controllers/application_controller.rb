@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
 
 private
 
+
   def tags
     @tags = Nota.tag_counts_on(:tags)
   end

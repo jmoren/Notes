@@ -1,7 +1,11 @@
 class NotasController < ApplicationController
+  respond_to :html, :xml, :json
+
   can_edit_on_the_spot
   before_filter :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
   before_filter :find_user_note, :only => [:destroy, :edit, :update]
+
+  autocomplete :tags, :name
 
   def index
     @notas = Nota.pagination(params[:page])
@@ -49,11 +53,19 @@ class NotasController < ApplicationController
     vote = current_user.votes.create(:nota_id => params[:id])
     @nota = vote.nota
   end
+  def all_tags
+    @tags_list = Nota.all_tag_counts.where("name like ?", "%#{params[:term]}%").map{|x| x.name }.flatten
+    respond_with(@tags_list)
+  end
+
 
   private
 
   def find_user_note
     @nota = current_user.notas.find(params[:id])
   end
+
+
+
 end
 

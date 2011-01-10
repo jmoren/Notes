@@ -13,11 +13,13 @@ Notas::Application.routes.draw do
   get '/tags/:tag' => "tags#by_tag", :as => :search_by_tag
 
   resources :notas do
+    get :all_tags, :on => :collection
     resources :comments, :only => [:new,:create,:edit, :update] do
       collection do
         post :update_attribute_on_the_spot
       end
     end
+
     collection do
       post :update_attribute_on_the_spot
     end
