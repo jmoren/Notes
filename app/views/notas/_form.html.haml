@@ -1,18 +1,24 @@
+#help_area
+  .help_wrap
+    Aca va la ayuda para crear una nota codigo
+  %br
+  .help_wrap
+    Aca van los lenguajes disponibles?
 #nota_form
+  #new_note_title
+    New Note
   = form_for @nota do |f|
-    = f.error_messages
-    
     %p
-      %span.label= f.label :title
-      = f.text_field :title
-    %p.label
-      %span= f.label :body, "Note",:class => 'info2', :title => "Languages avaiables: javascript, ruby, java, php, cpp"
+      %span= f.label :title
+      = f.text_field :title, :size => 72
     %p
-      = f.text_area :body, :cols => 80, :rows => 8
-      =# f.cktext_area :body, :width => '90%', :height => '250px', :class => 'inputs'
+      %span= f.label :tag_list
+      = text_field :nota,:tag_list, :size => 72  
     %p
-      %span.label= f.label :tag_list
-      = text_field :nota,:tag_list
-    %p
-      = submit_tag "Save Note"
-      == or #{link_to 'Cancel',notas_path,:class => "link_cancel"}
+      %span= f.label :body, "Note"
+      = f.text_area :body, :cols => 72, :rows => 25
+      =# f.cktext_area :body, :width => '90%', :height => '250px', :class => 'inputs'    
+    #submit_form_buttons
+      = link_to 'Cancel',notas_path,:id => "link_cancel"
+      = link_to "Save Note", notas_path, :method => "post",:id => "submit_button"  
+    .clear

@@ -5,11 +5,25 @@ body {
 .clear {
   clear: both; }
 
+.flash {
+  background: #cbe73f;
+  padding: 5px;
+  color: #0c0c0c;
+  border: 1px solid #8b9e2e;
+  text-align: center;
+  margin: 5px 10px;
+  font-size: 20px;
+  font-weight: bold; }
+  .flash .close_button {
+    float: right;
+    text-align: middle;
+    padding-bottom: 5px; }
+
 #header {
   background: url(/images/bg_header.jpg) repeat; }
   #header #left_side {
     float: left;
-    width: 72%;
+    width: 71.5%;
     padding-top: 55px;
     margin-left: 15px; }
   #header #right_side {
@@ -60,8 +74,11 @@ body {
         padding: 5px;
         border-bottom: solid 3px #cbe73f; }
       #container #side_panel #user_panel #user_info #user_name {
-        border: solid #cecece 2px;
-        padding: 10px; }
+        border-top: solid #cecece 2px;
+        border-bottom: solid #cecece 2px;
+        border-right: solid #cecece 2px;
+        padding: 10px;
+        margin-left: -10px; }
         #container #side_panel #user_panel #user_info #user_name .user_email {
           font-size: 13px; }
         #container #side_panel #user_panel #user_info #user_name .user_my_notes {
@@ -181,3 +198,41 @@ body {
   float: right;
   margin: 5px 20px 5px 0;
   padding: 5px; }
+
+#nota_form {
+  margin: 10px;
+  border: solid 1px #666666;
+  width: 62%;
+  padding: 10px; }
+  #nota_form #new_note_title {
+    color: #34c6f7;
+    font-size: 30px;
+    font-weight: bold;
+    border-bottom: solid 2px #34c6f7; }
+  #nota_form #submit_form_buttons {
+    font-size: 15px;
+    font-weight: bold;
+    float: right;
+    width: 30%; }
+    #nota_form #submit_form_buttons #link_cancel {
+      width: 50%;
+      margin-right: -5px;
+      background: #34c6f7;
+      color: white;
+      padding: 3px 10px;
+      text-decoration: none; }
+    #nota_form #submit_form_buttons #submit_button {
+      width: 50%;
+      background: #14addb;
+      margin: 0;
+      color: white;
+      padding: 3px 10px;
+      text-decoration: none; }
+
+#help_area {
+  margin: 10px;
+  float: right;
+  width: 30%; }
+  #help_area .help_wrap {
+    padding: 10px;
+    border: solid 1px #666666; }
