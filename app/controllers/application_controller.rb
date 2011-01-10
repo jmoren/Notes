@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery
 
-  private
+private
 
   def tags
     @tags = Nota.tag_counts_on(:tags)

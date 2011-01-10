@@ -1,0 +1,196 @@
+$globant_color: #CBE73F
+body
+  font:
+    family: Verdana, Helvetica, Arial
+    size: 14px
+.clear
+  :clear both
+#header
+  :background url(/images/bg_header.jpg)  repeat
+  :padding 50px 0 0 10px
+  #left_side
+    :float left
+    :padding-bottom 10px
+  #right_side  
+    :padding-top 20px
+    :padding-left 20px
+    :float right
+    :color #fff
+    :border-left solid 1px $globant_color
+    :margin-right 25px
+#container
+  :background-image -webkit-gradient(linear,left bottom,right bottom,color-stop(0.37, rgb(230,230,230)),color-stop(0.69, rgb(189,189,189)))
+  #side_panel
+    :background #fff
+    :width 19%
+    :float left
+    :padding 10px
+    :margin-top 10px
+    :border-top solid #cecece 2px
+    :border-right solid #cecece 2px
+    :border-bottom solid #cecece 2px
+    #login_form
+    #user_panel
+      #login_form
+        :color #666666
+        #user_login_header
+          :font
+            :size 20px
+            :weight bold
+          :color #0c0c0c
+          :padding 10px 0 
+          :border-bottom solid 3px $globant_color
+          :color #666666
+        input[type=submit]
+          :float right        
+          :color #fff
+          :margin-right -5px
+          :padding 3px 18px
+          :font
+            :size 15px
+            :weight bold
+          :border solid $globant_color 1px  
+          :background $globant_color
+          
+      #user_info
+        :color #666666
+        #user_header
+          :font
+            :size 20px
+            :weight bold
+          :color $globant_color
+          :padding 5px
+          :border-bottom solid 3px $globant_color
+        #user_name
+          :border solid #cecece 2px
+          :padding 10px
+          .user_email
+            :font
+              :size 13px
+          .user_my_notes
+            :font
+              :size 13px
+              :weight bold
+            :color #34C6F7
+        .logout_link
+          :padding 4px
+          :float right        
+          :text-align right
+          :text-decoration none
+          :color #fff
+          :font
+            :size 15px
+            :weight bold
+          :background $globant_color
+    #note_buttons
+      :text-align center
+      :margin-top 5px
+      a
+        :color #fff
+        :text-decoration none
+        :font
+          :size 20px
+          :weight bold
+      .new_note
+        :padding 5px
+        :width 47%
+        :float left
+        :background #34C6F7
+      .all_notes
+        :padding 5px
+        :width 45%
+        :float right
+        :background #F78C34
+    #tag_panel
+      #tag_header
+        a
+          :text-decoration none
+          :font
+            :size 20px
+            :weight bold
+          :color #fff
+        :text-align left
+        :padding 8px
+        :background #666666
+        :margin-top 5px
+      #tag_list
+        :border solid 2px #cecece
+        :padding 8px
+        :width 90%
+        :margin auto  
+        a
+          :font-weight bold
+          :color #222
+          :text-decoration none
+        .css1
+          :font-size 1em
+        .css2    
+          :font-size 1.2em
+        .css3    
+          :font-size 1.4em
+        .css4    
+          :font-size 1.6em
+  #content  
+    :float right
+    :width 79%
+    :margin-bottom 10px
+    .note
+      :margin-top 10px
+      :float left  
+      :background url(/images/head_note.png) top no-repeat
+      .note_complete
+        :color #fff
+        :margin  18px 10px
+        :width 287px
+        :padding 7px
+        :background #0c0c0c
+        :border-bottom 2spx solid $globant_color
+        :border-left 2px solid $globant_color
+        :border-right 2px solid $globant_color
+        .header
+          :margin 0 10px
+          :font
+            :size 11px
+            :weight bold
+          .note_owner
+            :font
+              :size 12px
+              :weight bold
+            :color $globant_color
+        .title
+          a
+            :color #222
+            :font
+              :size 25px
+              :weight bold
+            :text-decoration none
+          :width 95%  
+          :background $globant_color
+          :margin-left -9px
+          :padding 5px
+        .body
+          :height 90px        
+          :margin 0 10px
+          :border-bottom solid 1px $globant_color
+          :font
+            :size 15px
+        .tags
+          :margin-right 10px
+          :float right
+          a
+            :color $globant_color
+            :text-decoration none
+            :font
+              :size 18px
+              :weight bold
+        
+    
+#pagination
+  :width 96%
+  :text-align right
+  :border-top 3px solid #666666
+  :float right
+  :margin 5px 20px 5px 0
+  :padding 5px    
+    
+    

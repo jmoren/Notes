@@ -32,7 +32,9 @@ class User < ActiveRecord::Base
   has_many :notas
   has_many :comments
   has_many :votes
-
+  def name
+    self.email.split("@").first.sub('.',' ').titleize
+  end
   def roles_to_text
     self.roles.collect{|role| role.name}.join(" ")
   end

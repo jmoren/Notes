@@ -1,0 +1,177 @@
+body {
+  font-family: Verdana, Helvetica, Arial;
+  font-size: 14px; }
+
+.clear {
+  clear: both; }
+
+#header {
+  background: url(/images/bg_header.jpg) repeat;
+  padding: 50px 0 0 10px; }
+  #header #left_side {
+    float: left;
+    padding-bottom: 10px; }
+  #header #right_side {
+    padding-top: 20px;
+    padding-left: 20px;
+    float: right;
+    color: white;
+    border-left: solid 1px #cbe73f;
+    margin-right: 25px; }
+
+#container {
+  background-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0.37, #e6e6e6), color-stop(0.69, #bdbdbd)); }
+  #container #side_panel {
+    background: white;
+    width: 19%;
+    float: left;
+    padding: 10px;
+    margin-top: 10px;
+    border-top: solid #cecece 2px;
+    border-right: solid #cecece 2px;
+    border-bottom: solid #cecece 2px; }
+    #container #side_panel #user_panel #login_form {
+      color: #666666; }
+      #container #side_panel #user_panel #login_form #user_login_header {
+        font-size: 20px;
+        font-weight: bold;
+        color: #0c0c0c;
+        padding: 10px 0;
+        border-bottom: solid 3px #cbe73f;
+        color: #666666; }
+      #container #side_panel #user_panel #login_form input[type=submit] {
+        float: right;
+        color: white;
+        margin-right: -5px;
+        padding: 3px 18px;
+        font-size: 15px;
+        font-weight: bold;
+        border: solid #cbe73f 1px;
+        background: #cbe73f; }
+    #container #side_panel #user_panel #user_info {
+      color: #666666; }
+      #container #side_panel #user_panel #user_info #user_header {
+        font-size: 20px;
+        font-weight: bold;
+        color: #cbe73f;
+        padding: 5px;
+        border-bottom: solid 3px #cbe73f; }
+      #container #side_panel #user_panel #user_info #user_name {
+        border: solid #cecece 2px;
+        padding: 10px; }
+        #container #side_panel #user_panel #user_info #user_name .user_email {
+          font-size: 13px; }
+        #container #side_panel #user_panel #user_info #user_name .user_my_notes {
+          font-size: 13px;
+          font-weight: bold;
+          color: #34c6f7; }
+      #container #side_panel #user_panel #user_info .logout_link {
+        padding: 4px;
+        float: right;
+        text-align: right;
+        text-decoration: none;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        background: #cbe73f; }
+    #container #side_panel #note_buttons {
+      text-align: center;
+      margin-top: 5px; }
+      #container #side_panel #note_buttons a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold; }
+      #container #side_panel #note_buttons .new_note {
+        padding: 5px;
+        width: 47%;
+        float: left;
+        background: #34c6f7; }
+      #container #side_panel #note_buttons .all_notes {
+        padding: 5px;
+        width: 45%;
+        float: right;
+        background: #f78c34; }
+    #container #side_panel #tag_panel #tag_header {
+      text-align: left;
+      padding: 8px;
+      background: #666666;
+      margin-top: 5px; }
+      #container #side_panel #tag_panel #tag_header a {
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+        color: white; }
+    #container #side_panel #tag_panel #tag_list {
+      border: solid 2px #cecece;
+      padding: 8px;
+      width: 90%;
+      margin: auto; }
+      #container #side_panel #tag_panel #tag_list a {
+        font-weight: bold;
+        color: #222222;
+        text-decoration: none; }
+      #container #side_panel #tag_panel #tag_list .css1 {
+        font-size: 1em; }
+      #container #side_panel #tag_panel #tag_list .css2 {
+        font-size: 1.2em; }
+      #container #side_panel #tag_panel #tag_list .css3 {
+        font-size: 1.4em; }
+      #container #side_panel #tag_panel #tag_list .css4 {
+        font-size: 1.6em; }
+  #container #content {
+    float: right;
+    width: 79%;
+    margin-bottom: 10px; }
+    #container #content .note {
+      margin-top: 10px;
+      float: left;
+      background: url(/images/head_note.png) top no-repeat; }
+      #container #content .note .note_complete {
+        color: white;
+        margin: 18px 10px;
+        width: 287px;
+        padding: 7px;
+        background: #0c0c0c;
+        border-bottom: 2spx solid #cbe73f;
+        border-left: 2px solid #cbe73f;
+        border-right: 2px solid #cbe73f; }
+        #container #content .note .note_complete .header {
+          margin: 0 10px;
+          font-size: 11px;
+          font-weight: bold; }
+          #container #content .note .note_complete .header .note_owner {
+            font-size: 12px;
+            font-weight: bold;
+            color: #cbe73f; }
+        #container #content .note .note_complete .title {
+          width: 95%;
+          background: #cbe73f;
+          margin-left: -9px;
+          padding: 5px; }
+          #container #content .note .note_complete .title a {
+            color: #222222;
+            font-size: 25px;
+            font-weight: bold;
+            text-decoration: none; }
+        #container #content .note .note_complete .body {
+          height: 90px;
+          margin: 0 10px;
+          border-bottom: solid 1px #cbe73f;
+          font-size: 15px; }
+        #container #content .note .note_complete .tags {
+          margin-right: 10px;
+          float: right; }
+          #container #content .note .note_complete .tags a {
+            color: #cbe73f;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold; }
+
+#pagination {
+  width: 96%;
+  text-align: right;
+  border-top: 3px solid #666666;
+  float: right;
+  margin: 5px 20px 5px 0;
+  padding: 5px; }
