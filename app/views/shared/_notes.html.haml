@@ -9,11 +9,13 @@
             == created by 
             %span.note_owner
               == #{nota.user.name}
-          %br
-        %p.title
-          = link_to nota.title.capitalize, nota_path(nota), :class => 'info', :title => "#{nota.votes.size} votes / #{nota.comments.size} comments / #{nota.views} views"
+        .title_note
+          .title_header
+            .title
+              %h2= link_to nota.title.capitalize, nota_path(nota), :class => 'info', :title => "#{nota.votes.size} votes / #{nota.comments.size} comments / #{nota.views} views"
+            //.triangle_left_title   
         %p.body
-          ~ truncate(word_wrap(nota.body,:line_width => 30), :length => 120).html_safe
+          ~ truncate(word_wrap(nota.body,:line_width => 30), :length => 100).html_safe
         %p.tags
           - unless nota.tags.empty?
             Tags:

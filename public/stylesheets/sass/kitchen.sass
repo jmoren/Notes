@@ -1,22 +1,25 @@
 $globant_color: #CBE73F
 body
   font:
-    family: Verdana, Helvetica, Arial
+    family: Ubuntu,Verdana, Helvetica
     size: 14px
 .clear
   :clear both
 #header
-  :background url(/images/bg_header.jpg)  repeat
-  :padding 50px 0 0 10px
+  :background url(/images/bg_header.jpg) repeat
   #left_side
     :float left
-    :padding-bottom 10px
+    :width 72%
+    :padding-top 55px
+    :margin-left 15px
+    //:padding-right 150px
   #right_side  
-    :padding-top 20px
-    :padding-left 20px
+    #search_title
+      :font-size 12px
+      :margin-bottom 8px  
+    :padding-top 50px
     :float right
     :color #fff
-    :border-left solid 1px $globant_color
     :margin-right 25px
 #container
   :background-image -webkit-gradient(linear,left bottom,right bottom,color-stop(0.37, rgb(230,230,230)),color-stop(0.69, rgb(189,189,189)))
@@ -26,9 +29,10 @@ body
     :float left
     :padding 10px
     :margin-top 10px
-    :border-top solid #cecece 2px
-    :border-right solid #cecece 2px
-    :border-bottom solid #cecece 2px
+    :margin-left 10px
+    :border solid #E8E8E6 2px
+    :border-radius 5px
+    :-moz-border-radius 5px
     #login_form
     #user_panel
       #login_form
@@ -132,8 +136,7 @@ body
           :font-size 1.6em
   #content  
     :float right
-    :width 79%
-    :margin-bottom 10px
+    :width 78%
     .note
       :margin-top 10px
       :float left  
@@ -141,10 +144,10 @@ body
       .note_complete
         :color #fff
         :margin  18px 10px
-        :width 287px
+        :width 286px
         :padding 7px
         :background #0c0c0c
-        :border-bottom 2spx solid $globant_color
+        :border-bottom 3px solid $globant_color
         :border-left 2px solid $globant_color
         :border-right 2px solid $globant_color
         .header
@@ -157,19 +160,36 @@ body
               :size 12px
               :weight bold
             :color $globant_color
-        .title
-          a
-            :color #222
-            :font
-              :size 25px
-              :weight bold
-            :text-decoration none
-          :width 95%  
+        .title_header
+          .title
+            a
+              :color #222
+              :font
+                :size 25px
+                :weight bold
+              :text-decoration none
+              :margin-left 10px
+            h2
+              :padding 5px
+          :width 100%  
           :background $globant_color
-          :margin-left -9px
-          :padding 5px
+          :margin-left -7px
+          :border-radius 0 3px 3px 0
+          :-moz-border-radius 0 3px 3px 0
+          //.triangle_left_title
+          //:border-color transparent transparent #8B9E2E transparent 
+          //:border-style solid
+          //:border-width 12px
+          //:height 0px
+          //:width 0px
+          //:float left
+          //:position relative
+          //:left 5px
+          //:top -29px
+          //:-webkit-transform rotate(45deg)
+          //:-moz-transform rotate(45deg)
         .body
-          :height 90px        
+          :height 100px
           :margin 0 10px
           :border-bottom solid 1px $globant_color
           :font
@@ -181,7 +201,7 @@ body
             :color $globant_color
             :text-decoration none
             :font
-              :size 18px
+              :size 15px
               :weight bold
         
     

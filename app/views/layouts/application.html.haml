@@ -14,9 +14,11 @@
     #header
       #left_side
         = link_to image_tag('logo_header.png'), root_url    
+      = image_tag('line.jpg')    
       #right_side
+        #search_title Search any note or comment
         = form_tag @search,  :remote => true do
-          = text_field  @search, :search, :size => 27
+          = text_field  @search, :search, :size => 26
           = submit_tag "Search"
       .clear
     %br  
@@ -50,9 +52,9 @@
           %p
             #note_buttons
               .all_notes
-                = link_to "New Note", new_nota_path
-              .new_note
                 = link_to "All Notes", root_url
+              .new_note
+                = link_to "New Note", new_nota_path
           %br
           %p
             #tag_panel

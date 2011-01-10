@@ -1,23 +1,25 @@
 body {
-  font-family: Verdana, Helvetica, Arial;
+  font-family: Ubuntu, Verdana, Helvetica;
   font-size: 14px; }
 
 .clear {
   clear: both; }
 
 #header {
-  background: url(/images/bg_header.jpg) repeat;
-  padding: 50px 0 0 10px; }
+  background: url(/images/bg_header.jpg) repeat; }
   #header #left_side {
     float: left;
-    padding-bottom: 10px; }
+    width: 72%;
+    padding-top: 55px;
+    margin-left: 15px; }
   #header #right_side {
-    padding-top: 20px;
-    padding-left: 20px;
+    padding-top: 50px;
     float: right;
     color: white;
-    border-left: solid 1px #cbe73f;
     margin-right: 25px; }
+    #header #right_side #search_title {
+      font-size: 12px;
+      margin-bottom: 8px; }
 
 #container {
   background-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0.37, #e6e6e6), color-stop(0.69, #bdbdbd)); }
@@ -27,9 +29,10 @@ body {
     float: left;
     padding: 10px;
     margin-top: 10px;
-    border-top: solid #cecece 2px;
-    border-right: solid #cecece 2px;
-    border-bottom: solid #cecece 2px; }
+    margin-left: 10px;
+    border: solid #e8e8e6 2px;
+    border-radius: 5px;
+    -moz-border-radius: 5px; }
     #container #side_panel #user_panel #login_form {
       color: #666666; }
       #container #side_panel #user_panel #login_form #user_login_header {
@@ -121,8 +124,7 @@ body {
         font-size: 1.6em; }
   #container #content {
     float: right;
-    width: 79%;
-    margin-bottom: 10px; }
+    width: 78%; }
     #container #content .note {
       margin-top: 10px;
       float: left;
@@ -130,10 +132,10 @@ body {
       #container #content .note .note_complete {
         color: white;
         margin: 18px 10px;
-        width: 287px;
+        width: 286px;
         padding: 7px;
         background: #0c0c0c;
-        border-bottom: 2spx solid #cbe73f;
+        border-bottom: 3px solid #cbe73f;
         border-left: 2px solid #cbe73f;
         border-right: 2px solid #cbe73f; }
         #container #content .note .note_complete .header {
@@ -144,18 +146,22 @@ body {
             font-size: 12px;
             font-weight: bold;
             color: #cbe73f; }
-        #container #content .note .note_complete .title {
-          width: 95%;
+        #container #content .note .note_complete .title_header {
+          width: 100%;
           background: #cbe73f;
-          margin-left: -9px;
-          padding: 5px; }
-          #container #content .note .note_complete .title a {
+          margin-left: -7px;
+          border-radius: 0 3px 3px 0;
+          -moz-border-radius: 0 3px 3px 0; }
+          #container #content .note .note_complete .title_header .title a {
             color: #222222;
             font-size: 25px;
             font-weight: bold;
-            text-decoration: none; }
+            text-decoration: none;
+            margin-left: 10px; }
+          #container #content .note .note_complete .title_header .title h2 {
+            padding: 5px; }
         #container #content .note .note_complete .body {
-          height: 90px;
+          height: 100px;
           margin: 0 10px;
           border-bottom: solid 1px #cbe73f;
           font-size: 15px; }
@@ -165,7 +171,7 @@ body {
           #container #content .note .note_complete .tags a {
             color: #cbe73f;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 15px;
             font-weight: bold; }
 
 #pagination {
