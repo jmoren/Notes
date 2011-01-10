@@ -1,5 +1,9 @@
 //Agregar Reloj para evitar el Buggy
-//fade cuando aparece
+
+$("#notas").hide();
+$("#in_comments").hide();
 $("#notas").html("<%= escape_javascript( render @notas_found)%>");
+$("#notas").fadeIn('slow');
 $("#in_comments").html("<%= escape_javascript( render  :partial => "tiny_nota" , :collection => @comments_found, :as => :nota)%>");
+$("#in_comments").fadeIn('slow');
 

@@ -16,8 +16,8 @@
       - else
         untagged
   #show_comment_link
-    = link_to "View Comments", nil, :class => "show_comments"
-  #comment_index{:style => "display:none;"}
+    = link_to "View Comments", comments_by_note_nota_comments_path(nota) , :remote => true, :class => "show_comments"
+  %div{:id => "comment_index_#{nota.id}", :class => "comment_index",:style => "display:none;"}
     %span
       %p "sarasas comentario"
 

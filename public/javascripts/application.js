@@ -6,8 +6,8 @@ $(document).ready(function(){
 //    $('.show_comments').live('load',function(e){
     $('a.show_comments').live('click',function(e){
 
-        $(this).parent().next('#comment_index').slideToggle();
-        return false;
+        $(this).parent().next('.comment_index').slideToggle();
+
     });
 /*
     $('.show_comments').click(

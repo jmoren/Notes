@@ -2,6 +2,7 @@
 
 #index
   = render :partial => @notas_found
+  .clear
 #in_comments
   %h1 Found in comments
   = render :partial => "tiny_nota" , :collection => @comments_found, :as => :nota
