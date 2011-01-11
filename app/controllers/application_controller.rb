@@ -18,5 +18,13 @@ private
   def not_allowed
     redirect_to root_url, :notice => "You don't have permission to access this page"
   end
+
+  def call_rake(task, options = {})
+    options[:rails_env] ||= Rails.env
+
+    args = options.map { |n, v| "#{n.to_s.upcase}='#{v}'" }
+    system "bundle exec rake #{task} --trace 2>&1 >> #{Rails.root}/log/rake.log &"
+  end
+
 end
 

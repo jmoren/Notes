@@ -88,3 +88,4 @@ ActiveRecord::Schema.define(:version => 20101229190702) do
   end
 
 end
+

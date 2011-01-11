@@ -7,6 +7,15 @@ class NotasController < ApplicationController
     @notas = Nota.pagination(params[:page])
   end
 
+  def search
+
+    @notas = Nota.search(params[:search], :include => "comments")
+    @notas_found = []
+    @comments_found = []
+    @notas.each_with_weighting{|data,weight| weight > 10 ? @notas_found << data : @comments_found << data }
+
+  end
+
   def show
     @nota = Nota.find(params[:id])
     @nota.add_view unless @nota.new_record?
@@ -21,6 +30,7 @@ class NotasController < ApplicationController
     if @nota.save
       flash[:notice] = "Successfully created nota."
       redirect_to @nota
+      refresh_index
     else
       render 'new'
     end
@@ -54,6 +64,10 @@ class NotasController < ApplicationController
 
   def find_user_note
     @nota = current_user.notas.find(params[:id])
+  end
+
+  def refresh_index
+    call_rake ("ts:reindex")
   end
 end
 

@@ -6,6 +6,11 @@ class CommentsController < ApplicationController
     @comments = Comment.all
   end
 
+  def comments_by_note
+    @comments = Comment.where(:nota_id => params["nota_id"])
+  end
+
+
   def show
     @comment = Comment.find(params[:id])
   end

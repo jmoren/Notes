@@ -10,6 +10,7 @@ gem 'will_paginate', '3.0.pre2'
 gem 'acts-as-taggable-on'
 gem 'ckeditor', '3.5.0'
 gem 'on_the_spot'
+gem 'thinking-sphinx', '2.0.1', :require => 'thinking_sphinx'
 
 #Authentication
 gem "devise"
@@ -46,5 +47,10 @@ gem "mocha", :group => :test
 group :development, :test do
    gem 'webrat'
    gem 'yaml_db'
+   gem 'wirble'
+   gem 'wirble'
+   gem 'hirb'
+   gem 'awesome_print'
+   gem 'ruby-debug19', :require => 'ruby-debug'
 end
 

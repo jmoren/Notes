@@ -1,5 +1,8 @@
 .bundle
 db/*.sqlite3
-log/*.log
+db/*.sp*
+db/sphinx/*
+log/*
 tmp/**/*
 config/database.yml
+

@@ -10,7 +10,7 @@ body {
 #header {
   background-color: #222222;
   margin-bottom: 20px;
-  padding: 20px 60px;
+  padding: 10px 20px;
   overflow: hidden; }
   #header a {
     color: whiteSmoke;
@@ -118,7 +118,13 @@ body {
 
 .fieldWithErrors {
   display: inline; }
-
+#search_form {
+  margin: 10px 0;
+  padding: 10px 15px;
+  border-radius: 50px;
+  -moz-border-radius: 50px 50px 50px 50px;
+  border: 2px solid #CECECE;
+}
 #nota_form {
   margin: 20px 0;
   border: solid 5px #cecece;
@@ -186,7 +192,7 @@ body {
     border-radius: 7px;
     padding: 15px;
     font-size: 1em; }
-  #nota_container #nota_show #header_note {
+  #nota_container #nota_show #ante header_note {
     font-size: 1em; }
   #nota_container #nota_show #title_note {
     font-size: 2em;
@@ -248,6 +254,18 @@ body {
     -webkit-border-radius: 4px;
     background-color: #222222;
     color: #cccccc; }
+.tinynota{
+    float: left;
+    padding: 5px;
+    font-size: 12px;
+    border: 1px solid #222222;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    background-color: #F2F2BF;
+    color: #cccccc;
+    ;width: 18% }
+
 
 .left {
   float: left; }
@@ -301,7 +319,7 @@ body {
 
 #search_form {
   float: right;
-  clear: both; }
+   }
   #search_form input, #search_form select {
     border: 1px solid #cecece;
     border-radius: 5px;

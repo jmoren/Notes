@@ -1,0 +1,4 @@
+//Agregar Reloj para evitar el Buggy
+
+$("#comment_index_<%=@comments.first.nota_id%>").html("<%= escape_javascript( render :partial => "comments_by_note"  )%>");
+

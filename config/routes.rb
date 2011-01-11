@@ -1,5 +1,5 @@
 Notas::Application.routes.draw do
-  #match 'notas/search' => "notas#search"
+  match '/notas/search' => "notas#search"
   #match 'pages/topic/:topic' => "pages#topic"
   #match 'pages/category/:category' => "pages#category"
 
@@ -14,10 +14,12 @@ Notas::Application.routes.draw do
 
   resources :notas do
     resources :comments, :only => [:new,:create,:edit, :update] do
+      get 'comments_by_note', :on => :collection
       collection do
         post :update_attribute_on_the_spot
       end
     end
+
     collection do
       post :update_attribute_on_the_spot
     end
