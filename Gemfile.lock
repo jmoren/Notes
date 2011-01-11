@@ -78,8 +78,6 @@ GEM
       activesupport (= 3.0.3)
       bundler (~> 1.0)
       railties (= 3.0.3)
-    rails3-jquery-autocomplete (0.6.1)
-      rails (~> 3.0.0)
     railties (3.0.3)
       actionpack (= 3.0.3)
       activesupport (= 3.0.3)
@@ -119,7 +117,6 @@ DEPENDENCIES
   nifty-generators
   on_the_spot
   rails (= 3.0.3)
-  rails3-jquery-autocomplete
   webrat
   will_paginate (= 3.0.pre2)
   wirble

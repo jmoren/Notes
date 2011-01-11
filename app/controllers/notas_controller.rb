@@ -5,7 +5,7 @@ class NotasController < ApplicationController
   before_filter :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
   before_filter :find_user_note, :only => [:destroy, :edit, :update]
 
-  autocomplete :tags, :name
+
 
   def index
     @notas = Nota.pagination(params[:page])
@@ -21,7 +21,11 @@ class NotasController < ApplicationController
   end
 
   def create
+    tags = []
+    params[:tag_list].split(',').each{|tag| tags << ActsAsTaggableOn::Tag.find_or_create_by_name(tag.strip)}
+    params[:nota][:tag_list] = tags
     @nota = current_user.notas.build(params[:nota])
+
     if @nota.save
       flash[:notice] = "Successfully created nota."
       redirect_to @nota
