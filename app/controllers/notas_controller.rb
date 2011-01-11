@@ -1,7 +1,11 @@
 class NotasController < ApplicationController
+  respond_to :html, :xml, :json
+
   can_edit_on_the_spot
   before_filter :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
   before_filter :find_user_note, :only => [:destroy, :edit, :update]
+
+
 
   def index
     @notas = Nota.pagination(params[:page])
@@ -26,7 +30,11 @@ class NotasController < ApplicationController
   end
 
   def create
+    tags = []
+    params[:tag_list].split(',').each{|tag| tags << ActsAsTaggableOn::Tag.find_or_create_by_name(tag.strip)}
+    params[:nota][:tag_list] = tags
     @nota = current_user.notas.build(params[:nota])
+
     if @nota.save
       flash[:notice] = "Successfully created nota."
       redirect_to @nota
@@ -59,6 +67,11 @@ class NotasController < ApplicationController
     vote = current_user.votes.create(:nota_id => params[:id])
     @nota = vote.nota
   end
+  def all_tags
+    @tags_list = Nota.all_tag_counts.where("name like ?", "%#{params[:term]}%").map{|x| x.name }.flatten
+    respond_with(@tags_list)
+  end
+
 
   private
 
@@ -69,5 +82,7 @@ class NotasController < ApplicationController
   def refresh_index
     call_rake ("ts:reindex")
   end
+
+
 end
 

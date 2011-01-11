@@ -13,12 +13,67 @@
       = f.text_field :title, :size => 72
     %p
       %span= f.label :tag_list
-      = text_field :nota,:tag_list, :size => 72  
+
+      = text_field_tag :tag_list,nil , :id => "all_tags"
     %p
       %span= f.label :body, "Note"
       = f.text_area :body, :cols => 72, :rows => 25
-      =# f.cktext_area :body, :width => '90%', :height => '250px', :class => 'inputs'    
+      =# f.cktext_area :body, :width => '90%', :height => '250px', :class => 'inputs'
     #submit_form_buttons
       = link_to 'Cancel',notas_path,:id => "link_cancel"
-      = link_to "Save Note", notas_path, :method => "post",:id => "submit_button"  
-    .clear
+      = submit_tag
+
+
+\<style>
+\.ui-autocomplete-loading { background: white url('images/ui-anim_basic_16x16.gif') right center no-repeat; }
+\</style>
+
+
+:javascript
+  $(function() {
+  function split( val ) {
+  return val.split( /,\s*/ );
+  }
+  function extractLast( term ) {
+  return split( term ).pop();
+  }
+
+  $("#all_tags")
+  // don't navigate away from the field on tab when selecting an item
+  .bind( "keydown", function( event ) {
+  if ( event.keyCode === $.ui.keyCode.TAB &&
+  $( this ).data( "autocomplete" ).menu.active ) {
+  event.preventDefault();
+  }
+  })
+  .autocomplete({
+  source: function( request, response ) {
+  $.getJSON( "all_tags", {
+  term: extractLast( request.term )
+  }, response );
+  },
+  search: function() {
+  // custom minLength
+  var term = extractLast( this.value );
+  if ( term.length < 2 ) {
+  return false;
+  }
+  },
+  focus: function() {
+  // prevent value inserted on focus
+  return false;
+  },
+  select: function( event, ui ) {
+  var terms = split( this.value );
+  // remove the current input
+  terms.pop();
+  // add the selected item
+  terms.push( ui.item.value );
+  // add placeholder to get the comma-and-space at the end
+  terms.push( "" );
+  this.value = terms.join( ", " );
+  return false;
+  }
+  });
+  });
+

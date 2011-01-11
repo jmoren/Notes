@@ -13,6 +13,7 @@ Notas::Application.routes.draw do
   get '/tags/:tag' => "tags#by_tag", :as => :search_by_tag
 
   resources :notas do
+    get :all_tags, :on => :collection
     resources :comments, :only => [:new,:create,:edit, :update] do
       get 'comments_by_note', :on => :collection
       collection do
