@@ -15,6 +15,8 @@
         <%= link_to 'notas', admin_notas_path %>
         |
         <%= link_to 'comments', admin_comments_path %>
+        |
+        <%= link_to 'view site', root_path %>
       </div>
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>

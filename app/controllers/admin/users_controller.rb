@@ -1,5 +1,5 @@
 class Admin::UsersController < AdminController
-  before_filter :find_user, :only => [:edit, :update, :show, :destroy]
+  before_filter :find_user, :only => [:edit, :update, :show]
 
   def index
     @users = User.all
@@ -20,11 +20,6 @@ class Admin::UsersController < AdminController
   end
 
   def show
-  end
-
-  def destroy
-    @user.destroy
-    redirect_to admin_users_path, :notice => "The user was deleted!"
   end
 
   private
