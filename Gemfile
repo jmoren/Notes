@@ -14,7 +14,7 @@ gem 'thinking-sphinx', '2.0.1', :require => 'thinking_sphinx'
 
 #Authentication
 gem "devise"
-gem "devise_ldap_authenticatable"
+gem "devise_ldap_authenticatable", :git => 'https://github.com/boolean/devise_ldap_authenticatable.git'
 #gem 'highlight', :require => 'simplabs/highlight'
 gem 'coderay'
 gem 'RedCloth'
