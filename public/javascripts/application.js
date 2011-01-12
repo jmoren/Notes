@@ -9,6 +9,12 @@ $(document).ready(function(){
         $(this).parent().next('.comment_index').slideToggle();
 
     });
+    $('#search_buttom').live('click',function(e){
+
+        $("#notas").html($('#loading').html());
+
+    });
+
 /*
     $('.show_comments').click(
         function (){
