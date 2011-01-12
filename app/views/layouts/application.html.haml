@@ -19,7 +19,7 @@
           %span
             %small shared notes
       #search_form
-        = form_tag("/notas/search", :method => :get, :remote => true) do
+        = form_tag("/notas/search", :method => :get, :remote => true,:id => 'full_text_search_form') do
           = search_field_tag("search")
           = submit_tag 'Search',:id => "search_buttom"
     #container
