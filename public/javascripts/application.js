@@ -12,17 +12,17 @@ $(document).ready(function(){
 
     $("#full_text_search_form")
       .bind('ajax:loading', function() {
-            //$('#loading').fadeIn();
-            $("#notas").hide();
+
             $("#in_comments").hide();
 
-            $("#notas").block();
+            $("#notas").block({ fadeIn: 350,
+            fadeOut: 350,showOverlay: false,message: $('div#loading') });
         })
       //.bind('ajax:success', function(data, status, xhr) {alert("success!");})
       //.bind('ajax:failure', function(xhr, status, error) {alert("failure!");})
       .bind('ajax:complete', function() {
-            $("#notas").unblock();;
-            $("#notas").fadeIn('slow');
+            $("#notas").unblock();
+
             $("#in_comments").fadeIn('slow');
 
         });
