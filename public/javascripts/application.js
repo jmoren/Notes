@@ -12,14 +12,16 @@ $(document).ready(function(){
 
     $("#full_text_search_form")
       .bind('ajax:loading', function() {
-            $('#loading').fadeIn();
+            //$('#loading').fadeIn();
             $("#notas").hide();
             $("#in_comments").hide();
+
+            $("#notas").block();
         })
       //.bind('ajax:success', function(data, status, xhr) {alert("success!");})
       //.bind('ajax:failure', function(xhr, status, error) {alert("failure!");})
       .bind('ajax:complete', function() {
-            $('#loading').fadeOut();
+            $("#notas").unblock();;
             $("#notas").fadeIn('slow');
             $("#in_comments").fadeIn('slow');
 
