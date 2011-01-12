@@ -30,7 +30,8 @@ Notas::Application.routes.draw do
     end
   end
 
-  devise_for :users
+  devise_for :users, :controllers => {:sessions => "sessions"}
+
   root :to => "notas#index"
   #match '/' => redirect("/notas")
   # The priority is based upon order of creation:
