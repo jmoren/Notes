@@ -5,4 +5,5 @@ db/sphinx/*
 log/*
 tmp/**/*
 config/database.yml
+config/*.sphinx.conf
 
