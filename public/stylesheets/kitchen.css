@@ -236,3 +236,35 @@ body {
   #help_area .help_wrap {
     padding: 10px;
     border: solid 1px #666666; }
+
+/*Span Cargando Datos*/
+img#loading{
+    float: left;
+    padding-left:25px;
+    bottom:10px;
+    }
+
+#loading_title{
+    bottom:15px;
+    padding-left:10px;
+    font-size:50px;
+    float: left;
+}
+
+
+div#content div.blockMsg  {
+    border: none ;
+    /*padding: 5px ;*/
+    top:245px !important ;
+    opacity: .6;
+    width:  60% !important;
+     text-align: center !important ;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+    -moz-opacity:.60;
+    color: #000 !important ;
+    background-color: #cbe73f !important;
+}
+
