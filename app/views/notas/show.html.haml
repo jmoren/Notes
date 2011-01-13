@@ -1,46 +1,46 @@
 - title "#{@nota.title}"
 #notas
-#nota_show
-  #top_header
-  #header_note
-    #note_info
-      %span#votes.info{:title => "Vote Me!"}
-        = render :partial => "shared/votes"
-      == /
-      %span#views
-        = pluralize(@nota.views, 'view')
-      == /
-      %span#comment_count
-        = render 'shared/comments_count'
-    = distance_of_time_in_words(@nota.created_at, Time.now)
-    ago
+  #nota_show
+    #top_header
+    #header_note
+      #note_info
+        %span#votes.info{:title => "Vote Me!"}
+          = render :partial => "shared/votes"
+        == /
+        %span#views
+          = pluralize(@nota.views, 'view')
+        == /
+        %span#comment_count
+          = render 'shared/comments_count'
+      = distance_of_time_in_words(@nota.created_at, Time.now)
+      ago
+      %br
+      Created by
+      %span#note_owner
+        = @nota.user.name
     %br
-    Created by
-    %span#note_owner
-      = @nota.user.name
-  %br
-  #note_title
-    #title
-      -if @nota.user == current_user
-        = on_the_spot_edit @nota, :title
-      - else
-        = @nota.title
-  #body_note
-    ~ textilize @nota.body
-  - unless @nota.tags.empty?
-    #tags
-      Tags:
-      - @nota.tags.each do |tag|
-        %span.tag
-          = link_to tag,search_by_tag_path(tag.name)
-          
-  #links_note
-    - if current_user == @nota.user
-      %span#link_delete= link_to "Delete", @nota, :confirm => "Are you sure?", :method => :delete
-      %span#link_edit= link_to "Edit", edit_nota_path(@nota)
-  .clear    
-#comments_note
-  #add_comment
+    #note_title
+      #title
+        -if @nota.user == current_user
+          = on_the_spot_edit @nota, :title
+        - else
+          = @nota.title
+    #body_note
+      ~ textilize @nota.body
+    - unless @nota.tags.empty?
+      #tags
+        Tags:
+        - @nota.tags.each do |tag|
+          %span.tag
+            = link_to tag,search_by_tag_path(tag.name)
+            
+    #links_note
+      - if current_user == @nota.user
+        %span#link_delete= link_to "Delete", @nota, :confirm => "Are you sure?", :method => :delete
+        %span#link_edit= link_to "Edit", edit_nota_path(@nota)
+    .clear    
+  #comments_note
+    #add_comment
     %script
       function newComment(){
       $('#comment_form').slideToggle();
@@ -49,7 +49,13 @@
     - if current_user
       %span
         = link_to_function "Add new Comment","newComment()"
-  #comment_form{:style => "display:none;"}
-    = render 'comments/form'
-  .list_comments
-    = render :partial => @nota.comments
+    #comment_form{:style => "display:none;"}
+      = render 'comments/form'
+    .list_comments
+      = render :partial => @nota.comments
+      
+#in_comments
+#loading{:style => "display:none;"}
+  = image_tag('loading.gif',:id =>"loading")
+  %span#loading_title Buscando Datos...
+

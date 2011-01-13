@@ -3,6 +3,8 @@ body
   :font
     :family Ubuntu,Verdana, Helvetica
     :size 14px
+  img
+    :border none
 .clear
   :clear both
 .flash
@@ -36,10 +38,11 @@ body
     :color #fff
     :margin-right 25px
 #container
-  :background-image -webkit-gradient(linear,left bottom,right bottom,color-stop(0.37, rgb(230,230,230)),color-stop(0.69, rgb(189,189,189)))
+  :background -webkit-gradient(linear,left bottom,right bottom,color-stop(0.37, rgb(230,230,230)),color-stop(0.69, rgb(189,189,189)))
+  :background -moz-linear-gradient(left bottom,rgb(230,230,230) 37%,rgb(189,189,189) 59%)
   #side_panel
     :background #fff
-    :width 19%
+    :width 20%
     :float left
     :padding 10px
     :margin-top 10px
@@ -152,15 +155,15 @@ body
           :font-size 1.6em
   #content  
     :float right
-    :width 78%
+    :width 77%
     .note
       :margin-top 10px
       :float left  
       :background url(/images/head_note.png) top no-repeat
       .note_complete
         :color #fff
-        :margin  18px 10px
-        :width 286px
+        :margin  18px 5px
+        :width 287px
         :padding 7px
         :background #0c0c0c
         :border-bottom 3px solid $globant_color
@@ -207,9 +210,9 @@ body
             :font
               :size 15px
               :weight bold
-        
-    
-#pagination
+.error
+  :color red
+.pagination
   :width 96%
   :text-align right
   :border-top 3px solid #666666
@@ -268,7 +271,6 @@ body
   :padding 10px
   :color #fff
   #top_header
-    .triangle_left_title
     :border-color transparent transparent #B8B8B8 transparent 
     :border-style solid
     :border-width 12px
@@ -344,7 +346,7 @@ body
   #links_comments
     :float right
     :margin-right 8px
-    :margin-top -7px
+    :margin-top -5px
     :font
       :size 15px
       :weight bold
@@ -357,7 +359,7 @@ body
       :border solid 2px #14ADDB
       :color #fff
       :margin 0
-      :padding 2px 10px
+      :padding 3px 15px 3px 15px
       :text-decoration none
       :font
         :family Ubuntu,Verdana, Helvetica
@@ -367,7 +369,7 @@ body
       :background #34C6F7
       :border solid 2px #34C6F7
       :margin 0 -5px 0 0 
-      :padding 2px 10px
+      :padding 4px 15px 4px 15px
       :text-decoration none
     .new_comment
       textarea

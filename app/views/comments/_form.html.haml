@@ -1,6 +1,6 @@
 = form_for([@nota,Comment.new], :remote => true) do |f|
   = f.hidden_field :nota_id, :value => @nota.id
-  = f.text_area :comment, :cols => 70, :rows => 5, :class => "required", :minlength => "3"
+  = f.text_area :comment, :cols => 80, :rows => 5, :class => "required", :minlength => "3"
   #links_comments
     %span#link_cancel== #{link_to_function "Cancel","newComment()"}
     %span= f.submit "Save", :id => "link_create"

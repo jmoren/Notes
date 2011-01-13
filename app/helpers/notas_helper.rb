@@ -1,7 +1,5 @@
 module NotasHelper
-  def coderay(text)
-    text.gsub(/\<code( lang="(.+?)")?\>(.+?)\<\/code\>/m) do
-      CodeRay.scan($3, $2).div(:css => :class).div
-    end
+  def collapse_code(text)
+    text.gsub(/(?:@@@((?:[^@]+(?:[@]{1,2}?)[^@]*)*|(?:[^@]*))@@@)/m, "<br/> <u class=\"info\" title=\"Aca se cito codigo\"> Code </u><br/>") 
   end
 end

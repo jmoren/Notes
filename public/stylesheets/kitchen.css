@@ -1,6 +1,8 @@
 body {
   font-family: Ubuntu, Verdana, Helvetica;
   font-size: 14px; }
+  body img {
+    border: none; }
 
 .clear {
   clear: both; }
@@ -36,10 +38,11 @@ body {
       margin-bottom: 8px; }
 
 #container {
-  background-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0.37, #e6e6e6), color-stop(0.69, #bdbdbd)); }
+  background: -webkit-gradient(linear, left bottom, right bottom, color-stop(0.37, #e6e6e6), color-stop(0.69, #bdbdbd));
+  background: -moz-linear-gradient(left bottom, #e6e6e6 37%, #bdbdbd 59%); }
   #container #side_panel {
     background: white;
-    width: 19%;
+    width: 20%;
     float: left;
     padding: 10px;
     margin-top: 10px;
@@ -141,15 +144,15 @@ body {
         font-size: 1.6em; }
   #container #content {
     float: right;
-    width: 78%; }
+    width: 77%; }
     #container #content .note {
       margin-top: 10px;
       float: left;
       background: url(/images/head_note.png) top no-repeat; }
       #container #content .note .note_complete {
         color: white;
-        margin: 18px 10px;
-        width: 286px;
+        margin: 18px 5px;
+        width: 287px;
         padding: 7px;
         background: #0c0c0c;
         border-bottom: 3px solid #cbe73f;
@@ -191,7 +194,10 @@ body {
             font-size: 15px;
             font-weight: bold; }
 
-#pagination {
+.error {
+  color: red; }
+
+.pagination {
   width: 96%;
   text-align: right;
   border-top: 3px solid #666666;
@@ -319,7 +325,7 @@ body {
   #comments_note #links_comments {
     float: right;
     margin-right: 8px;
-    margin-top: -7px;
+    margin-top: -5px;
     font-size: 15px;
     font-weight: bold; }
     #comments_note #links_comments a {
@@ -330,7 +336,7 @@ body {
       border: solid 2px #14addb;
       color: white;
       margin: 0;
-      padding: 2px 10px;
+      padding: 3px 15px 3px 15px;
       text-decoration: none;
       font-family: Ubuntu, Verdana, Helvetica;
       font-size: 15px;
@@ -339,7 +345,7 @@ body {
       background: #34c6f7;
       border: solid 2px #34c6f7;
       margin: 0 -5px 0 0;
-      padding: 2px 10px;
+      padding: 4px 15px 4px 15px;
       text-decoration: none; }
     #comments_note #links_comments .new_comment textarea {
       border: solid 1px #666666; }
