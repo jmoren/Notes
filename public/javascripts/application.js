@@ -2,13 +2,37 @@
 // This file is automatically included by javascript_include_tag :defaults
 
 $(document).ready(function(){
-
+    $('#loading').fadeOut();
 //    $('.show_comments').live('load',function(e){
     $('a.show_comments').live('click',function(e){
 
         $(this).parent().next('.comment_index').slideToggle();
 
     });
+
+    $("#full_text_search_form")
+      .bind('ajax:loading', function() {
+
+            $("#in_comments").hide();
+
+            $("#notas").block({ fadeIn: 350,
+            fadeOut: 350,showOverlay: false,message: $('div#loading') });
+        })
+      //.bind('ajax:success', function(data, status, xhr) {alert("success!");})
+      //.bind('ajax:failure', function(xhr, status, error) {alert("failure!");})
+      .bind('ajax:complete', function() {
+            $("#notas").unblock();
+
+            $("#in_comments").fadeIn('slow');
+
+        });
+
+/*    $('#search_buttom').live('click',function(e){
+
+        $("#notas").html($('#loading').html());
+
+    });
+*/
 /*
     $('.show_comments').click(
         function (){
