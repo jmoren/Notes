@@ -44,7 +44,7 @@ class Nota < ActiveRecord::Base
   end
 
   def was_voted_by(user)
-    self.votantes.where(:id => user.id).count < 1
+    self.votantes.where(:id => user).count < 1
   end
 
   def add_view

@@ -192,18 +192,6 @@ body
           :margin-left -7px
           :border-radius 0 3px 3px 0
           :-moz-border-radius 0 3px 3px 0
-          //.triangle_left_title
-          //:border-color transparent transparent #8B9E2E transparent 
-          //:border-style solid
-          //:border-width 12px
-          //:height 0px
-          //:width 0px
-          //:float left
-          //:position relative
-          //:left 5px
-          //:top -29px
-          //:-webkit-transform rotate(45deg)
-          //:-moz-transform rotate(45deg)
         .body
           :height 100px
           :margin 0 10px
@@ -246,20 +234,24 @@ body
       :weight bold      
     :float right
     :width 30%
+    :margin-right 10px
     #link_cancel  
-      :width 50%
-      :margin-right -5px
+      :margin 0 -5px 0 0
       :background #34C6F7
       :color #fff
-      :padding 3px 10px
+      :padding 4px 15px 4px 15px
       :text-decoration none
     #submit_button
-      :width 50%    
       :background #14ADDB
-      :margin 0
+      :border solid 2px #14ADDB
       :color #fff
-      :padding 3px 10px
+      :margin 0
+      :padding 2px 10px
       :text-decoration none
+      :font
+        :family Ubuntu,Verdana, Helvetica
+        :size 15px
+        :weight bold
 #help_area
   :margin 10px
   :float right
@@ -267,4 +259,126 @@ body
   .help_wrap
     :padding 10px
     :border solid 1px #666666
-  
+
+#nota_show
+  :margin 10px
+  :background #666666
+  :border solid 1px #666666
+  :width 62%
+  :padding 10px
+  :color #fff
+  #top_header
+    .triangle_left_title
+    :border-color transparent transparent #B8B8B8 transparent 
+    :border-style solid
+    :border-width 12px
+    :height 0px
+    :width 0px
+    :float right
+    :position relative
+    :top -23px
+    :right -24px
+    :-webkit-transform rotate(45deg)
+    :-moz-transform rotate(45deg)
+  #header_note
+    :margin 0 10px
+    :font
+      :size 11px
+      :weight bold
+    #note_info
+      :float right
+    #note_owner    
+      :font
+        :size 12px
+        :weight bold
+      :color $globant_color
+  #note_title
+    #title
+      :color #222
+      :font
+        :size 25px
+        :weight bold
+      :margin-left 10px
+      h2
+        :padding 5px
+    :width 100%  
+    :background $globant_color
+    :margin-left -11px
+  #body_note
+    :min-height 120px
+  #tags
+    :border-top 2px solid $globant_color
+    :padding 7px
+    a
+      :color $globant_color
+      :text-decoration none
+  #links_note
+    :float right
+    :font
+      :size 15px
+      :weight bold
+    a
+      :color #fff
+      :text-decoration none
+    #link_delete  
+      :margin 0 -5px 0 0 
+      :background #34C6F7
+      :padding 4px 15px 4px 15px
+    #link_edit
+      :background #14ADDB
+      :border solid 2px #14ADDB
+      :margin 0 0 0 0 
+      :padding 2px 10px
+      :text-decoration none
+#comments_note
+  :width 60%
+  :margin 10px
+  :padding 20px
+  :background #fff
+  a
+    :color #666666
+    :text-decoration none
+    :font
+      :size 15 px
+      :weight bold  
+  #links_comments
+    :float right
+    :margin-right 8px
+    :margin-top -7px
+    :font
+      :size 15px
+      :weight bold
+    a
+      :color #fff
+      :text-decoration none
+      
+    #link_create 
+      :background #14ADDB
+      :border solid 2px #14ADDB
+      :color #fff
+      :margin 0
+      :padding 2px 10px
+      :text-decoration none
+      :font
+        :family Ubuntu,Verdana, Helvetica
+        :size 15px
+        :weight bold
+    #link_cancel
+      :background #34C6F7
+      :border solid 2px #34C6F7
+      :margin 0 -5px 0 0 
+      :padding 2px 10px
+      :text-decoration none
+    .new_comment
+      textarea
+        :border solid 1px #666666   
+  .list_comments
+    .comment
+      :padding 10px
+      :margin 10px 0
+      :color #9C9798
+      :border-top 2px solid #666666
+      .comment_owner
+        :font        
+          :size 12px
+      .comment_body

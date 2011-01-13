@@ -213,21 +213,24 @@ body {
     font-size: 15px;
     font-weight: bold;
     float: right;
-    width: 30%; }
+    width: 30%;
+    margin-right: 10px; }
     #nota_form #submit_form_buttons #link_cancel {
-      width: 50%;
-      margin-right: -5px;
+      margin: 0 -5px 0 0;
       background: #34c6f7;
       color: white;
-      padding: 3px 10px;
+      padding: 4px 15px 4px 15px;
       text-decoration: none; }
     #nota_form #submit_form_buttons #submit_button {
-      width: 50%;
       background: #14addb;
-      margin: 0;
+      border: solid 2px #14addb;
       color: white;
-      padding: 3px 10px;
-      text-decoration: none; }
+      margin: 0;
+      padding: 2px 10px;
+      text-decoration: none;
+      font-family: Ubuntu, Verdana, Helvetica;
+      font-size: 15px;
+      font-weight: bold; }
 
 #help_area {
   margin: 10px;
@@ -236,3 +239,114 @@ body {
   #help_area .help_wrap {
     padding: 10px;
     border: solid 1px #666666; }
+
+#nota_show {
+  margin: 10px;
+  background: #666666;
+  border: solid 1px #666666;
+  width: 62%;
+  padding: 10px;
+  color: white; }
+  #nota_show #top_header {
+    border-color: transparent transparent #b8b8b8 transparent;
+    border-style: solid;
+    border-width: 12px;
+    height: 0px;
+    width: 0px;
+    float: right;
+    position: relative;
+    top: -23px;
+    right: -24px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg); }
+  #nota_show #header_note {
+    margin: 0 10px;
+    font-size: 11px;
+    font-weight: bold; }
+    #nota_show #header_note #note_info {
+      float: right; }
+    #nota_show #header_note #note_owner {
+      font-size: 12px;
+      font-weight: bold;
+      color: #cbe73f; }
+  #nota_show #note_title {
+    width: 100%;
+    background: #cbe73f;
+    margin-left: -11px; }
+    #nota_show #note_title #title {
+      color: #222222;
+      font-size: 25px;
+      font-weight: bold;
+      margin-left: 10px; }
+      #nota_show #note_title #title h2 {
+        padding: 5px; }
+  #nota_show #body_note {
+    min-height: 120px; }
+  #nota_show #tags {
+    border-top: 2px solid #cbe73f;
+    padding: 7px; }
+    #nota_show #tags a {
+      color: #cbe73f;
+      text-decoration: none; }
+  #nota_show #links_note {
+    float: right;
+    font-size: 15px;
+    font-weight: bold; }
+    #nota_show #links_note a {
+      color: white;
+      text-decoration: none; }
+    #nota_show #links_note #link_delete {
+      margin: 0 -5px 0 0;
+      background: #34c6f7;
+      padding: 4px 15px 4px 15px; }
+    #nota_show #links_note #link_edit {
+      background: #14addb;
+      border: solid 2px #14addb;
+      margin: 0 0 0 0;
+      padding: 2px 10px;
+      text-decoration: none; }
+
+#comments_note {
+  width: 60%;
+  margin: 10px;
+  padding: 20px;
+  background: white; }
+  #comments_note a {
+    color: #666666;
+    text-decoration: none;
+    font-size: 15 px;
+    font-weight: bold; }
+  #comments_note #links_comments {
+    float: right;
+    margin-right: 8px;
+    margin-top: -7px;
+    font-size: 15px;
+    font-weight: bold; }
+    #comments_note #links_comments a {
+      color: white;
+      text-decoration: none; }
+    #comments_note #links_comments #link_create {
+      background: #14addb;
+      border: solid 2px #14addb;
+      color: white;
+      margin: 0;
+      padding: 2px 10px;
+      text-decoration: none;
+      font-family: Ubuntu, Verdana, Helvetica;
+      font-size: 15px;
+      font-weight: bold; }
+    #comments_note #links_comments #link_cancel {
+      background: #34c6f7;
+      border: solid 2px #34c6f7;
+      margin: 0 -5px 0 0;
+      padding: 2px 10px;
+      text-decoration: none; }
+    #comments_note #links_comments .new_comment textarea {
+      border: solid 1px #666666; }
+  #comments_note .list_comments .comment {
+    padding: 10px;
+    margin: 10px 0;
+    color: #9c9798;
+    border-top: 2px solid #666666; }
+    #comments_note .list_comments .comment .comment_owner {
+      font-size: 12px; }

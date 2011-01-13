@@ -1,12 +1,12 @@
 .comment
-  .author.right
-    %span= distance_of_time_in_words(comment.created_at, Time.now)
-    ago
-    |
-    %span== created by #{comment.user.email}
-  .body
+  .comment_owner
+    %span= comment.created_at.strftime('%d de %B, %Y')
+    == -
+    %span
+      %b==  by #{comment.user.name}
+  .comment_body
     %p
       - if current_user == comment.nota.user
-        = on_the_spot_edit comment,:comment, :type => :textarea, :rows => 6, :columns => 82
+        = on_the_spot_edit comment,:comment, :type => :textarea, :rows => 6, :columns => 68
       - else
         = comment.comment

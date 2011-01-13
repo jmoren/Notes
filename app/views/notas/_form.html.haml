@@ -6,23 +6,25 @@
     Aca van los lenguajes disponibles?
 #nota_form
   #new_note_title
-    New Note
+    - if @nota.new_record?
+      New Note
+    - else
+      Edit Note
   = form_for @nota do |f|
     %p
       %span= f.label :title
       = f.text_field :title, :size => 72
     %p
       %span= f.label :tag_list
-
-      = text_field_tag :tag_list,nil , :id => "all_tags"
+      = text_field_tag :tag_list,nil , :id => "all_tags", :size => 72
     %p
       %span= f.label :body, "Note"
-      = f.text_area :body, :cols => 72, :rows => 25
+      = f.text_area :body, :cols => 71, :rows => 25
       =# f.cktext_area :body, :width => '90%', :height => '250px', :class => 'inputs'
     #submit_form_buttons
       = link_to 'Cancel',notas_path,:id => "link_cancel"
-      = submit_tag
-
+      = f.submit 'Save Note', :id => "submit_button"
+    .clear
 
 \<style>
 \.ui-autocomplete-loading { background: white url('images/ui-anim_basic_16x16.gif') right center no-repeat; }
