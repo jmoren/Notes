@@ -12,7 +12,7 @@ class NotasController < ApplicationController
   end
 
   def search
-    sleep(5)
+    sleep(3)
     @notas = Nota.search(params[:search], :include => "comments")
     @notas_found = []
     @comments_found = []
