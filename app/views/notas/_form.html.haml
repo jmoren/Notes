@@ -18,7 +18,7 @@
     %p
       %span= f.label :tag_list
       %br
-      = text_field_tag :tag_list,nil , :id => "all_tags", :size => 72
+      = text_field_tag :tag_list, @nota.tag_list.join(', ')  , :id => "all_tags", :size => 72
     %p
       %span= f.label :body, "Note"
       %br
@@ -48,7 +48,7 @@
   })
   .autocomplete({
   source: function( request, response ) {
-  $.getJSON( "all_tags", {
+  $.getJSON( "#{all_tags_notas_path}", {
   term: extractLast( request.term )
   }, response );
   },
