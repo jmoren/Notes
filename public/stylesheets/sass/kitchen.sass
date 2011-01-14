@@ -1,5 +1,8 @@
 $globant_color: #CBE73F
 body
+  :margin 0
+  :border 0
+  :padding 0
   :font
     :family Ubuntu,Verdana, Helvetica
     :size 14px
@@ -9,7 +12,7 @@ body
   :clear both
 .flash
   :background  $globant_color
-  :padding 5px 
+  :padding 5px
   :color #0c0c0c
   :border 1px solid #8B9E2E
   :text-align center
@@ -29,10 +32,10 @@ body
     :padding-top 55px
     :margin-left 15px
     //:padding-right 150px
-  #right_side  
+  #right_side
     #search_title
       :font-size 12px
-      :margin-bottom 8px  
+      :margin-bottom 8px
     :padding-top 50px
     :float right
     :color #fff
@@ -59,19 +62,19 @@ body
             :size 20px
             :weight bold
           :color #0c0c0c
-          :padding 10px 0 
+          :padding 10px 0
           :border-bottom solid 3px $globant_color
           :color #666666
         input[type=submit]
-          :float right        
+          :float right
           :color #fff
           :margin-right -5px
           :padding 3px 18px
           :font
             :size 15px
             :weight bold
-          :border solid $globant_color 1px  
-          :background $globant_color 
+          :border solid $globant_color 1px
+          :background $globant_color
       #user_info
         :color #666666
         #user_header
@@ -81,7 +84,7 @@ body
           :color $globant_color
           :padding 5px
           :border-bottom solid 3px $globant_color
-        #user_name          
+        #user_name
           :border-top solid #cecece 2px
           :border-bottom solid #cecece 2px
           :border-right solid #cecece 2px
@@ -97,7 +100,7 @@ body
             :color #34C6F7
         .logout_link
           :padding 4px
-          :float right        
+          :float right
           :text-align right
           :text-decoration none
           :color #fff
@@ -140,25 +143,25 @@ body
         :border solid 2px #cecece
         :padding 8px
         :width 90%
-        :margin auto  
+        :margin auto
         a
           :font-weight bold
           :color #222
           :text-decoration none
         .css1
           :font-size 1em
-        .css2    
+        .css2
           :font-size 1.2em
-        .css3    
+        .css3
           :font-size 1.4em
-        .css4    
+        .css4
           :font-size 1.6em
-  #content  
+  #content
     :float right
     :width 77%
     .note
       :margin-top 10px
-      :float left  
+      :float left
       :background url(/images/head_note.png) top no-repeat
       .note_complete
         :color #fff
@@ -190,7 +193,7 @@ body
               :margin-left 10px
             h2
               :padding 5px
-          :width 100%  
+          :width 100%
           :background $globant_color
           :margin-left -7px
           :border-radius 0 3px 3px 0
@@ -218,8 +221,8 @@ body
   :border-top 3px solid #666666
   :float right
   :margin 5px 20px 5px 0
-  :padding 5px    
-    
+  :padding 5px
+
 #nota_form
   :margin 10px
   :border solid 1px #666666
@@ -234,11 +237,11 @@ body
   #submit_form_buttons
     :font
       :size 15px
-      :weight bold      
+      :weight bold
     :float right
     :width 30%
     :margin-right 10px
-    #link_cancel  
+    #link_cancel
       :margin 0 -5px 0 0
       :background #34C6F7
       :color #fff
@@ -271,7 +274,7 @@ body
   :padding 10px
   :color #fff
   #top_header
-    :border-color transparent transparent #B8B8B8 transparent 
+    :border-color transparent transparent #B8B8B8 transparent
     :border-style solid
     :border-width 12px
     :height 0px
@@ -289,7 +292,7 @@ body
       :weight bold
     #note_info
       :float right
-    #note_owner    
+    #note_owner
       :font
         :size 12px
         :weight bold
@@ -303,7 +306,7 @@ body
       :margin-left 10px
       h2
         :padding 5px
-    :width 100%  
+    :width 100%
     :background $globant_color
     :margin-left -11px
   #body_note
@@ -322,14 +325,14 @@ body
     a
       :color #fff
       :text-decoration none
-    #link_delete  
-      :margin 0 -5px 0 0 
+    #link_delete
+      :margin 0 -5px 0 0
       :background #34C6F7
       :padding 4px 15px 4px 15px
     #link_edit
       :background #14ADDB
       :border solid 2px #14ADDB
-      :margin 0 0 0 0 
+      :margin 0 0 0 0
       :padding 2px 10px
       :text-decoration none
 #comments_note
@@ -342,7 +345,7 @@ body
     :text-decoration none
     :font
       :size 15 px
-      :weight bold  
+      :weight bold
   #links_comments
     :float right
     :margin-right 8px
@@ -353,8 +356,8 @@ body
     a
       :color #fff
       :text-decoration none
-      
-    #link_create 
+
+    #link_create
       :background #14ADDB
       :border solid 2px #14ADDB
       :color #fff
@@ -368,12 +371,12 @@ body
     #link_cancel
       :background #34C6F7
       :border solid 2px #34C6F7
-      :margin 0 -5px 0 0 
+      :margin 0 -5px 0 0
       :padding 4px 15px 4px 15px
       :text-decoration none
     .new_comment
       textarea
-        :border solid 1px #666666   
+        :border solid 1px #666666
   .list_comments
     .comment
       :padding 10px
@@ -381,24 +384,24 @@ body
       :color #9C9798
       :border-top 2px solid #666666
       .comment_owner
-        :font        
+        :font
           :size 12px
       .comment_body
-      
+
 /*Span Cargando Datos*/
 #loading
   img
     :float left
-    :padding 0 25px 
+    :padding 0 25px
     :bottom 10px
-  #loading_title 
+  #loading_title
     :bottom 15px
     :margin-left 10px
     :font-size 50px
     :float left
 
-.blockMsg  
-  :border none 
+.blockMsg
+  :border none
   :position absolute !important
   //:top 245px !important
   :opacity .75
@@ -411,6 +414,4 @@ body
   :-moz-opacity .60 !important
   :color #000 !important
   :background-color $globant_color !important
-
-
 

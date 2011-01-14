@@ -1,4 +1,7 @@
 body {
+  margin: 0;
+  border: 0;
+  padding: 0;
   font-family: Ubuntu, Verdana, Helvetica;
   font-size: 14px; }
   body img {
