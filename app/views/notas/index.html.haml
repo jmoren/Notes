@@ -1,7 +1,7 @@
 - title "Globant Kitchen"
 - if @notas.empty?
   %h2
-    No hay notas cargadas todavia!
+    Not found any notes!!
 - else
   #notas
     - for nota in @notas
@@ -9,9 +9,9 @@
     .clear  
     = will_paginate @notas, :prev_label => "back", :next_label => "next"
 
-  #in_comments
+#in_comments
   
-  #loading
-    = image_tag('loading.gif',:id =>"loading")
-    %span#loading_title Buscando Datos...
+#loading
+  = image_tag('loading.gif',:id =>"loading")
+  %span#loading_title Buscando Datos...
 

@@ -105,16 +105,14 @@
       color: #bb4444;
       font-weight: bold; }
     .CodeRay .code pre .il {
-      background: #dddddd;
-      color: black; }
+      color: #d0cffe; }
       .CodeRay .code pre .il .il {
         background: #cccccc; }
         .CodeRay .code pre .il .il .il {
           background: #bbbbbb; }
       .CodeRay .code pre .il .idl {
-        background: #dddddd;
         font-weight: bold;
-        color: #666666; }
+        color: #ffc56d; }
     .CodeRay .code pre .idl {
       font-weight: bold;
       color: #666666; }
