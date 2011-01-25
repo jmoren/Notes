@@ -1,9 +1,37 @@
 #help_area
   .help_wrap
-    Aca va la ayuda para crear una nota codigo
-  %br
+    %h2
+      Que quiero anotar?
+    %p
+      Las notas sirven para compartir conocimiento, o como ayuda memoria en el trabajo 
+      Puedo postear una solucion a algun problema que me haya encontrado en el proyecto, 
+      o algo que algun compañero haya preguntado, algo interesante que me haya encontrado 
+      en la red.
+      
+    %p
+      Tratamos que escriban la situacion por la cual empezaron a buscar y la solucion encontrada, 
+      asi otro que se encuentre en la misma situacion, podra usar lo que otros hayan encontrado. Se
+      pueden comentar, para corregir, agradecer, proponer variantes, etc.
+    %p
+      Para citar codigo, por el momento un solo bloque de codigo por nota, tenemos que dejar una linea en blanco 
+      antes y otra despues, y poner el codigo entre tres arrobas
+      %br
+      %blockquote
+        @@@ lang
+        %br
+        "CODIGO"
+        %br
+        @@@
+      %br
+      Reemplazamos 
+      %em lang 
+      por el lenguaje que estamos utilizando
+  %br    
   .help_wrap
-    Aca van los lenguajes disponibles?
+    %h2
+      Lenguajes disponibles
+    Los lenguajes disponibles para que se vean coloreados, son:
+    %b Java, Javascript, Php, Ruby, Cpp
 #nota_form
   #new_note_title
     - if @nota.new_record?
@@ -14,20 +42,20 @@
     %p
       %span= f.label :title
       %br
-      = f.text_field :title, :size => 72
+      = f.text_field :title, :size => 63, :class => "required", :minlength => "3"
     %p
       %span= f.label :tag_list
       %br
-      = text_field_tag :tag_list, @nota.tag_list.join(', ')  , :id => "all_tags", :size => 72
+      = text_field_tag :tag_list, @nota.tag_list.join(', ')  , :id => "all_tags", :size => 63
     %p
-      %span= f.label :body, "Note"
-      %br
-      = f.text_area :body, :cols => 71, :rows => 25
+      %div= f.label :body, "Note"
+      = f.text_area :body, :cols => 81, :rows => 16, :class => "required", :minlength => "10"
       =# f.cktext_area :body, :width => '90%', :height => '250px', :class => 'inputs'
     #submit_form_buttons
-      = link_to 'Cancel',notas_path,:id => "link_cancel"
-      = f.submit 'Save Note', :id => "submit_button"
+      %span= link_to 'Cancel',notas_path,:id => "link_cancel"
+      %span= f.submit 'Save Note', :id => "submit_button"
     .clear
+
 
 :javascript
   $(function() {
@@ -75,5 +103,9 @@
   return false;
   }
   });
+  });
+:javascript
+  $(document).ready(function(){
+  $("#new_nota").validate();
   });
 

@@ -37,7 +37,7 @@ class Nota < ActiveRecord::Base
 
   validates :title, :body, :user_id, :presence => true
 
-  validates_length_of :title, :within => 3..20
+  #validates_length_of :title, :within => 3..20
 
   def self.pagination(page)
     all(:order => "created_at DESC").paginate(:page => page, :per_page => 6)

@@ -11,7 +11,6 @@ Notas::Application.routes.draw do
   end
 
   get '/tags/:tag' => "tags#by_tag", :as => :search_by_tag
-
   resources :notas do
     get :all_tags, :on => :collection
     resources :comments, :only => [:new,:create,:edit, :update] do
@@ -24,7 +23,6 @@ Notas::Application.routes.draw do
     collection do
       post :update_attribute_on_the_spot
     end
-
     member do
       post :add_vote
     end

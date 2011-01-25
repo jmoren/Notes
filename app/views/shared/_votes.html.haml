@@ -1,7 +1,7 @@
 - unless  @nota.was_voted_by(current_user)
-  %span
+  %span#vote_info
     = pluralize(@nota.votes.size, 'vote')
 - else
-  %span
+  %span#vote_link
     = link_to  pluralize(@nota.votes.size, 'vote'), add_vote_nota_path(@nota), :remote => true, :method => "post"
 

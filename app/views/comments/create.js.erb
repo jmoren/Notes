@@ -1,7 +1,8 @@
 $(".list_comments").append("<%= escape_javascript(render :partial => @comment) %>");
-$('#comment_count').html("<%= escape_javascript(render 'shared/comments_count')%> ")
+$('.comment_count').html("<%= escape_javascript(render 'shared/comments_count')%> ")
 $('#comment_form').slideToggle('slow');
 $('form.new_comment textarea').val("")
 $('#add_comment').fadeToggle();
+
 <% flash.discard %>
 

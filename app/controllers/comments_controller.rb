@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
     @nota = @comment.nota
     respond_to do |format|
       if @comment.save
-        flash[:notice] = "Successfully created comment."
+        @nota.comments.reload
         format.js
       else
         format.html {render :action => 'new'}

@@ -2,14 +2,18 @@
   %p
     = f.label :email
     %br
-    = f.text_field :email, :size => 27
+    = f.text_field :email, :size => 25, :class => "required email"
   %p
     = f.label :password
     %br
-    = f.password_field :password, :size => 27
+    = f.password_field :password, :size => 25, :class => "required"
   - if devise_mapping.rememberable? 
     = f.check_box :remember_me
     = f.label :remember_me
   #submit_login{:style => "float:right;margin-right: 5px"}
     = f.submit "Sign in"
 .clear  
+:javascript
+  $(document).ready(function(){
+  $("#user_new").validate();
+  });
