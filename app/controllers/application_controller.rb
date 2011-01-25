@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_filter :tags
+  before_filter :tags, :relevant_notes
 
   rescue_from DeviseLdapAuthenticatable::LdapException do |exception|
     render :text => exception, :status => 500
@@ -11,7 +11,11 @@ class ApplicationController < ActionController::Base
 
 private
 
-
+  def relevant_notes
+    @most_viewed = Nota.last(:order => :views)
+    @last_note = Nota.last
+    @most_voted = Nota.all.sort{|a,b| b.votes.size <=> a.votes.size}.first
+  end
   def tags
     @tags = Nota.tag_counts_on(:tags)
   end

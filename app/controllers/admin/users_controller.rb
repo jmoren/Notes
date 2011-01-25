@@ -21,7 +21,7 @@ class Admin::UsersController < AdminController
 
   def show
   end
-
+  
   private
 
   def find_user

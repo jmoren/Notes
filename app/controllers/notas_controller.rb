@@ -10,7 +10,7 @@ class NotasController < ApplicationController
   def index
     @notas = Nota.pagination(params[:page])
   end
-
+  
   def search
     sleep(3)
     @notas = Nota.search(params[:search], :include => "comments")
@@ -49,6 +49,9 @@ class NotasController < ApplicationController
   end
 
   def update
+    tags = []
+    params[:tag_list].split(',').each{|tag| tags << ActsAsTaggableOn::Tag.find_or_create_by_name(tag.strip)}
+    params[:nota][:tag_list] = tags
     if @nota.update_attributes(params[:nota])
       flash[:notice] = "Successfully updated nota."
       redirect_to @nota

@@ -1,5 +1,8 @@
 - title "Related Notes"
 
 #index
-  = render :partial => @notas
+  - for nota in @notas
+    = render :partial => 'notas/nota', :locals =>{:nota => nota}
+  .clear  
+  = will_paginate @notas, :prev_label => "back", :next_label => "next"
 
