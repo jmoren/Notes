@@ -13,7 +13,7 @@
         %span#note_owner
           = @nota.user.name
     #related_notes_by_user
-      %p== Notes posted by #{@nota.user.name } (last 10...): 
+      %p== Notes posted by #{@nota.user.name }: 
       - @user_notes.each do |note|
         .note_user
           %span.title_note_user= truncate(note.title, :lenght => 40)

@@ -22,7 +22,7 @@ class NotasController < ApplicationController
 
   def show
     @nota = Nota.find(params[:id])
-    @user_notes = Nota.find_all_by_user_id(current_user,:limit => 10)
+    @user_notes = Nota.find_all_by_user_id(@nota.user,:limit => 10)
     @nota.add_view unless @nota.new_record?
   end
 
