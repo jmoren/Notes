@@ -49,7 +49,7 @@
       = text_field_tag :tag_list, @nota.tag_list.join(', ')  , :id => "all_tags", :size => 63
     %p
       %div= f.label :body, "Note"
-      = f.text_area :body, :cols => 81, :rows => 16, :class => "required", :minlength => "10"
+      = f.text_area :body, :cols => 81, :rows => 33, :class => "required", :minlength => "10"
       =# f.cktext_area :body, :width => '90%', :height => '250px', :class => 'inputs'
     #submit_form_buttons
       %span= link_to 'Cancel',notas_path,:id => "link_cancel"

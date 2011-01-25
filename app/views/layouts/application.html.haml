@@ -62,19 +62,25 @@
             #relevant_notes
               #relevant_header
                 Relevant Notes
-              .title
-                = link_to @last_note.title, nota_path(@last_note), :class =>"info", :title => "#{@last_note.tag_list}"
+              - if @last_note
+                .title
+                  = link_to truncate(@last_note.title,:length => 35), nota_path(@last_note), :class =>"info", :title => "#{@last_note.tag_list}"
+                %br
                 %span.details
                   %small
                     == created #{distance_of_time_in_words(@last_note.created_at, Time.now)} ago
                 .clear  
-              .title
-                = link_to @most_voted.title, nota_path(@most_voted), :class =>"info", :title => "#{@most_voted.tag_list}"
+              -if @most_voted
+                .title
+                  = link_to  truncate(@most_voted.title,:length => 35), nota_path(@most_voted), :class =>"info", :title => "#{@most_voted.tag_list}"
+                %br
                 %span.details
                   %small== (#{ @most_voted.votes.size} votes)  
                 .clear
-              .title
-                = link_to @most_viewed.title, nota_path(@most_viewed), :class =>"info", :title => "#{@most_viewed.tag_list}"
+              -if @most_viewed
+                .title
+                  = link_to  truncate(@most_viewed.title,:length => 35), nota_path(@most_viewed), :class =>"info", :title => "#{@most_viewed.tag_list}"
+                %br
                 %span.details
                   %small== (#{ @most_viewed.views} views)
                 .clear  

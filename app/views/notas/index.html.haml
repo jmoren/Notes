@@ -1,13 +1,17 @@
 - title "Globant Kitchen"
-#notas
-  - for nota in @notas
-    = render :partial => 'nota', :locals =>{:nota => nota}
-  .clear  
-  = will_paginate @notas, :prev_label => "back", :next_label => "next"
+- if @notas.empty?
+  %h2
+    No hay notas cargadas todavia!
+- else
+  #notas
+    - for nota in @notas
+      = render :partial => 'nota', :locals =>{:nota => nota}
+    .clear  
+    = will_paginate @notas, :prev_label => "back", :next_label => "next"
 
-#in_comments
-
-#loading
-  = image_tag('loading.gif',:id =>"loading")
-  %span#loading_title Buscando Datos...
+  #in_comments
+  
+  #loading
+    = image_tag('loading.gif',:id =>"loading")
+    %span#loading_title Buscando Datos...
 
